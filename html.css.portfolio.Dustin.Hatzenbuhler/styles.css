@@ -92,3 +92,20 @@ h1#first-last {
     font-size: 12px;
     line-height: 20px;
 }
+
+#contact-data .contact-row, .td {
+    overflow: hidden;
+    display: block;
+    line-height: 20px;
+    color: white;
+    font-weight: 700;
+}
+
+#contact-data .th {
+    width: 90px;
+    margin-right: 10px;
+    text-align: right;
+    display: block;
+    float: left;
+}
+
