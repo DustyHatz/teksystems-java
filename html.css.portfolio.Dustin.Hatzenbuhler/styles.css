@@ -17,7 +17,7 @@ div, h1 {
 }
 
 #header-main {
-    background-color: purple;
+    background-color: #282828;
     clear: both;
     padding: 0 2px;
     overflow: hidden;
@@ -93,7 +93,7 @@ h1#first-last {
     line-height: 20px;
 }
 
-#contact-data .contact-row, .td {
+#contact-data .contact-row {
     overflow: hidden;
     display: block;
     line-height: 20px;
@@ -109,3 +109,16 @@ h1#first-last {
     float: left;
 }
 
+#contact-data .td {
+    color: #7b7d82;
+}
+
+#about {
+    display: block;
+    padding: 24px 30px 56px;
+}
+
+#about-bio {
+    font-size: 14;
+    color: #7b7d82;
+}
