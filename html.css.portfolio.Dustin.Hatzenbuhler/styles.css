@@ -78,3 +78,17 @@ h1#first-last {
     outline: 0;
     padding: 0;
 }
+
+#contact-data {
+    margin-top: 0;
+    height: auto;
+    right: 0;
+    position: relative;
+    right: -30px;
+    padding: 2px 10px 0 0;
+    overflow: hidden;
+    float: right;
+    width: 310px;
+    font-size: 12px;
+    line-height: 20px;
+}
