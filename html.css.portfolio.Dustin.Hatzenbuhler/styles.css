@@ -8,9 +8,18 @@ div, h1 {
     display: block;
 }
 
+h3 {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
 #main-container {
     background-color: #282828;
     width: 820px;
+    height: 1030px;
     margin: 0 auto;
     vertical-align: baseline;
     padding: 0;
@@ -121,4 +130,170 @@ h1#first-last {
 #about-bio {
     font-size: 14;
     color: #7b7d82;
+}
+
+#resume-section {
+    position: relative;
+    display: block;
+}
+
+#resume-body {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    padding: 25px 30px 56px;
+}
+
+.resume-sidebar {
+    padding-top: 1px;
+    float: right;
+    width: 190px;
+    margin-left: 60px;
+}
+
+.skills {
+    margin-top: 0px;
+    display: block;
+}
+
+.skills #skills-title {
+    color: #fff;
+    font-size: 14px;
+    line-height: 17px;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 23px;
+}
+
+.skill-bar {
+    margin-top: 10px;
+}
+
+.skill-type {
+    display: block;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 16px;
+    margin-bottom: 4px;
+    color: #878787;
+}
+
+.bar {
+    background-color: #3b3b3b;
+    display: block;
+    height: 15px;
+    width: 100%;
+}
+
+.bar-value {
+    color: #FFFFFF;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 14px;
+    margin-right: 2px;
+    overflow: hidden;
+    position: relative;
+    vertical-align: top;
+}
+
+#bar-blue {
+    width: 90%;
+    display: block;
+    height: 15px;
+    overflow: hidden;
+    position: relative;
+    text-align: right;
+    background-color: #327ea3;
+}
+
+#bar-aqua {
+    width: 80%;
+    display: block;
+    height: 15px;
+    overflow: hidden;
+    position: relative;
+    text-align: right;
+    background-color: #4ca5d0;
+}
+#bar-green {
+    width: 93%;
+    display: block;
+    height: 15px;
+    overflow: hidden;
+    position: relative;
+    text-align: right;
+    background-color: #6ca338;
+}
+#bar-orange {
+    width: 80%;
+    display: block;
+    height: 15px;
+    overflow: hidden;
+    position: relative;
+    text-align: right;
+    background-color: #ffbc38;
+}
+
+#graphics {
+    margin-top: 55px;
+}
+
+.graphics-box {
+    display: inline-block;
+    height: 9px;
+    margin-right: 5px;
+    width: 9px;
+}
+
+.graphics-section {
+    margin-top: -3;
+}
+
+#graphics-row {
+    overflow: hidden;
+}
+
+.graphic-type {
+    display: inline;
+}
+
+#box-blue {
+    background-color: #327ea3;
+}
+
+#box-aqua {
+    background-color: #4ca5d0;
+}
+
+#box-green {
+    background-color: #6ca338;
+}
+
+#box-red {
+    background-color: #e82c0c;
+}
+
+#lang {
+    margin-top: 55px;
+}
+
+.lang-row {
+    overflow: hidden;
+}
+
+.lang-type {
+    margin-right: 5px;
+    font-size: 12px;
+    line-height: 15px;
+    margin-bottom: 2px;
+}
+
+#lang-circles {
+    background: url(http://shifthtml.themerex.net/images/level_bg_dark.png);
+    content: "";
+    display: inline;
+    height: 17px;
+    left: 0;
+    right: 0;
 }
