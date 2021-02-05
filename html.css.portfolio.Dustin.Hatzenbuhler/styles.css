@@ -16,6 +16,23 @@ h3 {
     margin-inline-end: 0px;
 }
 
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    border: 0;
+    font-family: inherit;
+    font-size: 100%;
+    font-style: inherit;
+    font-weight: inherit;
+    margin: 0;
+    outline: 0;
+    padding: 0;
+    vertical-align: baseline;
+}
+
 #main-container {
     background-color: #282828;
     width: 820px;
@@ -297,3 +314,116 @@ h1#first-last {
     left: 0;
     right: 0;
 }
+
+.resume-wrapper {
+    padding-top: 5px;
+    overflow: hidden;
+}
+
+.resume-employment {
+    margin-top: 0;
+}
+
+.category-header {
+    margin-bottom: 32px;
+}
+
+.category-title {
+    position: relative;
+    background: #373737;
+    font-size: 14px;
+    line-height: 18px;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 5px 10px 7px 39px;
+    font-weight: 700;
+    border-radius: 4px 0 0 4px;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    margin-bottom: 10px;
+}
+
+#employment-icon {
+    border-radius: 3px;
+    position: absolute;
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-image: url(../images/section_marker.png);
+    background-position: 9px 11px;
+    background-repeat: no-repeat;
+    content: "";
+    top: 0;
+    left: 0;
+    background-color: #ffbc38;
+}
+
+.category-post {
+    background: none;
+    padding-top: 0;
+    margin-top: 0;
+    display: block;
+}
+
+.post-header {
+    overflow: hidden;
+    margin-bottom: 11px;
+}
+
+.post-years {
+    color: #646464;
+    float: right;
+    font-size: 18px;
+    line-height: 22px;
+}
+
+.post-title {
+    overflow: hidden;
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 700;
+    padding-left: 22px;
+    margin-bottom: 1px;
+    position: relative;
+    color: #fff;
+    display: block;
+    margin-block-start: 1.33em;
+    margin-block-end: 1.33em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+#employment-icon {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-image: url(../images/post_title_icon.png);
+    background-repeat: no-repeat;
+    background-position: 5px 3px;
+    top: 4px;
+    left: 0;
+    border-radius: 15px;
+    background-color: #ffbc38;
+}
+
+.post-subtitle {
+    font-size: 14px;
+    line-height: 18px;
+    color: #9b9b9b;
+    padding-left: 23px;
+    text-transform: capitalize;
+    margin-bottom: 0;
+    display: block;
+    margin-block-start: 1.67em;
+    margin-block-end: 1.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.post-body {
+
+}
+
