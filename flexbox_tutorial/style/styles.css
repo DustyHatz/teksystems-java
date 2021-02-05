@@ -30,3 +30,18 @@ li {
 }
 */
 
+.menu-container .menu-item nav ul {
+    display: flex;
+}
+
+.menu-container .menu-item nav ul a {
+    color: white;
+    padding: 21px 37px;
+    border-radius: 3px;
+}
+
+.menu-container .menu-item nav ul a:hover {
+    background-color: #becccf;
+    color: #1c1808;
+}
+
