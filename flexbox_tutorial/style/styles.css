@@ -20,4 +20,13 @@ li {
     color: white;
 }
 
+.menu-item {
+    flex: 1;
+}
+
+/* for illustration
+.more {
+    flex: 2;
+}
+*/
 
