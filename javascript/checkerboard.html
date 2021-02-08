@@ -1,0 +1,31 @@
+<!DOCTYPE html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CheckerBoard</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        function makeCheckerBoard() {
+            var height = Number(prompt("How high?: "));
+            var width = Number(prompt("How wide?: "))
+            for (i = 0; i < height; i++) {
+
+                if (i % 2 == 0) {
+                    document.write("*".repeat((width / 2) + 1));
+                    document.write("<br>");
+                } else {
+                    document.write("&nbsp;" + "*".repeat(width / 2));
+                    document.write("<br>");
+                }
+
+            }
+        }
+
+        makeCheckerBoard();
+    </script>
+</body>
+
+</html>
