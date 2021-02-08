@@ -9,15 +9,21 @@
 <body>
     <script type="text/javascript">
         function makeCheckerBoard() {
+
+            // Ask for user input
             var height = Number(prompt("How high?: "));
             var width = Number(prompt("How wide?: "))
+
             for (i = 0; i < height; i++) {
 
+                // Check if i (the row number) is an even number
                 if (i % 2 == 0) {
-                    document.write("*".repeat((width / 2) + 1));
+                    document.write("* ".repeat((width / 2) + 1));
                     document.write("<br>");
+
+                // Else all other rows will begin with a space/whitespace
                 } else {
-                    document.write("&nbsp;" + "*".repeat(width / 2));
+                    document.write("&nbsp;" + "* ".repeat(width / 2));
                     document.write("<br>");
                 }
 
