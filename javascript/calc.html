@@ -1,23 +1,52 @@
 <!DOCTYPE html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
 </head>
+
 <body>
     <script type="text/javascript">
         function calc(str) {
-            var sum = 0
-            var temp = 0
-            for (var i = 0; i < str.length(); i++) {
 
-                if (str[i].typeof() == Number) {
-                    temp = str[i]
+            var no_spaces = str.split(" ");
+            console.log("no_space: " + no_spaces);
+            var str2 = no_spaces.join("");
+            console.log("str2: " + str2);
+            var nums = [];
+            var operators = [];
+            for (let i = 0; i < str2.length; i++) {
+
+                if (str2[i] == "+" || str2[i] == "-") {
+                    operators.push(str2[i]);
+                } else {
+                    nums.push(Number(str2[i]));
                 }
+            }
+
+            var sum = 0
+
+            for (let i = 0; i < operators.length; i++) {
+
+                if (operators[i] == "+") {
+                    sum = sum + nums[i + 1];
+                } else {
+                    sum = sum - nums[i];
+                }
+
+
+                console.log("nums: " + nums);
+                console.log("operators: " + operators);
+                console.log("Length of str2: " + str2.length);
+                console.log("sum: " + sum);
+
 
             }
         }
-        calc();
+        //str = prompt("Enter sequence: ")
+        calc("1 + 2 + 3 - 4");
     </script>
 </body>
+
 </html>
