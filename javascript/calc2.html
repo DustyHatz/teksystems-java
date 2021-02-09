@@ -7,38 +7,38 @@
 </head>
 
 <body>
-    <script type="text/javascript">
-        function calc(str) {
+    <!DOCTYPE html lang="en">
 
-            var no_spaces = str.split(" ");
-            var str2 = no_spaces.join("");
-            var nums = [];
-            var operators = [];
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Calculator</title>
+    </head>
 
-            for (let i = 0; i < str2.length; i++) {
+    <body>
+        <script type="text/javascript">
+            function calc(str) {
 
-                if (str2[i] == "+" || str2[i] == "-") {
-                    operators.push(str2[i]);
+                if (str.length == 0) {
+                    return 0;
                 } else {
-                    nums.push(Number(str2[i]));
+                    var no_spaces = str.split(" ");
+                    var new_str = no_spaces.join("");
+                    var sum = eval(new_str);
+                    return "Sum: " + sum;
                 }
             }
+            // str = prompt("Enter sequence: ");
+            var str = "15 ;10 + 3 + 0 + 25 ;5 + 6 - 7 - 8 + 9 + 10 - 11 ;";
+            console.log("str: " + str);
+            var new_str = str.split(";");
+            console.log(new_str);
 
-            var sum = 0
-
-            for (let i = 0; i < operators.length; i++) {
-
-                if (operators[i] == "+") {
-                    sum = sum + nums[i + 1];
-                } else {
-                    sum = sum - nums[i];
-                }
-                console.log("Sum: " + sum);
+            for (let i = 0; i < new_str.length; i++) {
+                console.log(calc(new_str[i]));
             }
-        }
-        str = prompt("Enter sequence: ")
-        calc(str);
-    </script>
-</body>
+            
+        </script>
+    </body>
 
-</html>
+    </html>
