@@ -7,38 +7,32 @@
 </head>
 
 <body>
-    <script type="text/javascript">
-        function calc(str) {
+    <!DOCTYPE html lang="en">
 
-            var no_spaces = str.split(" ");
-            var str2 = no_spaces.join("");
-            var nums = [];
-            var operators = [];
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Calculator</title>
+    </head>
 
-            for (let i = 0; i < str2.length; i++) {
+    <body>
+        <script type="text/javascript">
+            function calc(str) {
 
-                if (str2[i] == "+" || str2[i] == "-") {
-                    operators.push(str2[i]);
+                if (str.length == 0) {
+                    console.log("Must enter valid values...");
                 } else {
-                    nums.push(Number(str2[i]));
+                    var no_spaces = str.split(" ");
+                    var new_str = no_spaces.join("");
+                    var sum = eval(new_str);
+                    console.log("Sum: " + sum);
                 }
+
+
             }
+            str = prompt("Enter sequence: ");
+            calc(str);
+        </script>
+    </body>
 
-            var sum = 0
-
-            for (let i = 0; i < operators.length; i++) {
-
-                if (operators[i] == "+") {
-                    sum = sum + nums[i + 1];
-                } else {
-                    sum = sum - nums[i];
-                }
-                console.log("Sum: " + sum);
-            }
-        }
-        str = prompt("Enter sequence: ")
-        calc(str);
-    </script>
-</body>
-
-</html>
+    </html>
