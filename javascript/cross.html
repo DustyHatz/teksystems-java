@@ -1,0 +1,46 @@
+<!DOCTYPE html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cross</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        function makeCross() {
+            var height = Number(prompt("How high?: "));
+
+            for (var i = 1; i <= height; i++) {
+                var str = "";
+                for (var i = 1; j <= height; j++) {
+                    if (j == i || j == height + 1 - i) {
+                        str += "*";
+                    } else {
+                        str += " ";
+                    }
+                }
+                console.log(str);
+            }
+        }
+
+        /*
+        Size: 8
+       *      *
+        *    *
+         *  *
+          **
+          **
+         *  *
+        *    *
+       *      *
+
+        Size: 7
+
+         */
+
+        makeCross();
+    </script>
+</body>
+
+</html>
