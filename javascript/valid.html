@@ -1,0 +1,24 @@
+<!DOCTYPE html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Valid</title>
+    <script>
+        promptUser = function () {
+            var input = prompt("Enter number between 0 and 100");
+            if (parseInt(input) > 0 && parseInt(input) < 100) {
+                console.log(Math.pow(input, 2));
+            } else {
+                console.log("not in range");
+                promptUser();
+            }
+        };
+        promptUser();
+    </script>
+</head>
+
+<body></body>
+
+</html>
