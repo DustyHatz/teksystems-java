@@ -11,11 +11,10 @@
         function calc(str) {
 
             var no_spaces = str.split(" ");
-            console.log("no_space: " + no_spaces);
             var str2 = no_spaces.join("");
-            console.log("str2: " + str2);
             var nums = [];
             var operators = [];
+
             for (let i = 0; i < str2.length; i++) {
 
                 if (str2[i] == "+" || str2[i] == "-") {
@@ -24,7 +23,7 @@
                     nums.push(Number(str2[i]));
                 }
             }
-            
+
             var sum = 0
 
             for (let i = 0; i < operators.length; i++) {
@@ -34,14 +33,7 @@
                 } else {
                     sum = sum - nums[i];
                 }
-
-
-                console.log("nums: " + nums);
-                console.log("operators: " + operators);
-                console.log("Length of str2: " + str2.length);
-                console.log("sum: " + sum);
-
-
+                console.log("Sum: " + sum);
             }
         }
         str = prompt("Enter sequence: ")
