@@ -22,10 +22,10 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Home</a>
+                <a class="navbar-brand" href="#" onclick="focusMethodHome()">Home</a>
             </div>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                <li><a href="#" onclick="focusMethodLogin()"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
             </ul>
         </div>
         </div>
@@ -34,9 +34,6 @@
     <div class="container-fluid text-center">
         <div class="row content">
             <div class="col-sm-2 sidenav">
-                <p><a href="#">Link</a></p>
-                <p><a href="#">Link</a></p>
-                <p><a href="#">Link</a></p>
             </div>
             <div class="col-sm-8">
                 <h1>Welcome to the Whiskey Search</h1>
@@ -49,25 +46,19 @@
                         </form>
                     </div>
                     <div class="forms-box">
-                        <form method="POST" action="profile.html" id="form-id" onsubmit="">
+                        <form method="POST" action="#" id="form-id">
                             <label for="username" class="form-label">Username:</label>
                             <input type="text" class="form-control" id="username"
                                 placeholder="Username...">
                             <label for="password" class="form-label">Password:</label>
                             <input type="password" class="form-control" id="password"
                                 placeholder="Password...">
-                            <input type="submit" class="btn btn-primary form-btn" value="Login">
+                            <input type="button" class="btn btn-primary form-btn" value="Login" onclick="userLogin()">
                         </form>
                     </div>
                 </div>        
             </div>
             <div class="col-sm-2 sidenav">
-                <div class="well">
-                    <p>ADS</p>
-                </div>
-                <div class="well">
-                    <p>ADS</p>
-                </div>
             </div>
         </div>
     </div>
