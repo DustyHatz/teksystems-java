@@ -9,7 +9,20 @@
     <link rel="script" type="text/javascript" href="scripts/script.js">
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
     <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
-    <title>Whiskey Results</title>
+    <title>Whiskey Info</title>
+    <style>
+        .whiskey-info {
+            display: flex;
+            justify-content: flex-start;
+            margin: 5px;
+        }
+
+        .whiskey-info ul {
+            list-style-type: none;
+            text-align: left;
+            padding-left: 5px;
+        }
+    </style>
 </head>
 
 <body>
@@ -34,44 +47,39 @@
     <div class="container-fluid text-center">
         <div class="row content">
             <div class="col-sm-2 sidenav">
-                <p><a href="#">Link</a></p>
-                <p><a href="#">Link</a></p>
-                <p><a href="#">Link</a></p>
             </div>
             <div class="col-sm-8">
-                <h1>Welcome to the Whiskey Search</h1>
-                <div class="forms-container">
-                    <div class="forms-box">
-                        <form method="POST" action="whiskey.html" id="form-id">
-                            <label for="search-whiskey" class="form-label">Search:</label>
-                            <input type="text" class="form-control" id="search-whiskey"
-                                placeholder="Search for a whiskey...">
-                            <input type="submit" class="btn btn-success form-btn" value="Search">
-                        </form>
+                <h1>Whiskey Name</h1>
+                <div class="profile-container" style="display: flex; ">
+                    <div class="profile-pic-box" style="width: 200px; height: 200px;"> <!--Inline css example-->
+                        <img id="whiskey-pic" alt="photo of whiskey" src="images/image.jpg">
                     </div>
-                    <div class="forms-box">
-                        <form method="POST" action="profile.html" id="form-id">
-                            <label for="username" class="form-label">Username:</label>
-                            <input type="text" class="form-control" id="username"
-                                placeholder="Username...">
-                            <label for="password" class="form-label">Password:</label>
-                            <input type="password" class="form-control" id="password"
-                                placeholder="Password...">
-                            <input type="submit" class="btn btn-primary form-btn" value="Login">
-                        </form>
+                    <div class="whiskey-info">
+                        <ul>
+                            <li><strong>Country: </strong></li>
+                            <li>Scotland</li>
+                            <li><strong>Region: </strong></li>
+                            <li>Islay</li>
+                            <li><strong>Type: </strong></li>
+                            <li>Single Malt</li>
+                        </ul>
                     </div>
-                </div>        
-                <hr>
-                <h3>Test</h3>
-                <p>Lorem ipsum...</p>
+                    <div class="whiskey-favs">
+                        <h3>Similar Whiskeys:</h3>
+                        <div>
+                            <ul>
+                                <li>Ardbeg</li>
+                                <li>Laphroaig</li>
+                                <li>Octomore</li>
+                                <li>Compass Box</li>
+                                <li>Lagavulin</li>
+                                <li>Bruichladdich</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>       
             </div>
             <div class="col-sm-2 sidenav">
-                <div class="well">
-                    <p>ADS</p>
-                </div>
-                <div class="well">
-                    <p>ADS</p>
-                </div>
             </div>
         </div>
     </div>
