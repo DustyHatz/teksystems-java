@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="script" type="text/javascript" href="scripts/script.js">
+    <script type="text/javascript" src="scripts/script.js"></script>
+
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
     <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
     <title>Whiskey Search</title>
 </head>
-
 <body>
 
     <nav class="navbar navbar-inverse">
@@ -42,15 +42,15 @@
                 <h1>Welcome to the Whiskey Search</h1>
                 <div class="forms-container">
                     <div class="forms-box">
-                        <form method="POST" action="whiskey.html" id="form-id">
+                        <form method="POST" action="#" id="form-id" onsubmit="userSearch()">
                             <label for="search-whiskey" class="form-label">Search:</label>
-                            <input type="text" class="form-control" id="search-whiskey"
+                            <input type="text" class="form-control" id="search-input" name="search-whiskey"
                                 placeholder="Search for a whiskey...">
                             <input type="submit" class="btn btn-success form-btn" value="Search">
                         </form>
                     </div>
                     <div class="forms-box">
-                        <form method="POST" action="profile.html" id="form-id">
+                        <form method="POST" action="profile.html" id="form-id" onsubmit="">
                             <label for="username" class="form-label">Username:</label>
                             <input type="text" class="form-control" id="username"
                                 placeholder="Username...">
