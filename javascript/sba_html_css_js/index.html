@@ -42,11 +42,10 @@
                 <h1>Welcome to the Whiskey Search</h1>
                 <div class="forms-container">
                     <div class="forms-box">
-                        <form method="POST" action="#" id="form-id" onsubmit="userSearch()">
+                        <form method="POST" action="#" id="form-id">
                             <label for="search-whiskey" class="form-label">Search:</label>
-                            <input type="text" class="form-control" id="search-input" name="search-whiskey"
-                                placeholder="Search for a whiskey...">
-                            <input type="submit" class="btn btn-success form-btn" value="Search">
+                            <input type="text" class="form-control" id="search-input" name="search-whiskey" placeholder="Search for a whiskey...">
+                            <input type="button" class="btn btn-success form-btn" value="Search" onclick="userSearch()" onkeydown="userSearch()">
                         </form>
                     </div>
                     <div class="forms-box">
