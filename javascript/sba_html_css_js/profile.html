@@ -10,6 +10,17 @@
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
     <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
     <title>User Profile</title>
+    <style>
+        .user-info {
+            display: flex;
+            margin: 5px;
+        }
+
+        ul {
+            list-style-type: none;
+            text-align: left;
+        }
+    </style>
 </head>
 
 <body>
@@ -40,26 +51,26 @@
             </div>
             <div class="col-sm-8">
                 <h1>Cheers, User!</h1>
-                <div class="profile-container">
-                    <div class="profile-pic-box" style="display: flex;"> <!--Inline css example-->
+                <div class="profile-container" style="display: flex; ">
+                    <div class="profile-pic-box" style="width: 200px; height: 200px;"> <!--Inline css example-->
                         <img id="profile-pic" alt="photo of user" src="images/image.jpg">
                     </div>
-                </div>
-                    <div class="forms-box">
-                        <form method="POST" action="profile.html" id="form-id">
-                            <label for="username" class="form-label">Username:</label>
-                            <input type="text" class="form-control" id="username"
-                                placeholder="Username...">
-                            <label for="password" class="form-label">Password:</label>
-                            <input type="password" class="form-control" id="password"
-                                placeholder="Password...">
-                            <input type="submit" class="btn btn-primary form-btn" value="Login">
-                        </form>
+                    <div class="user-info">
+                        <ul>
+                            <li><strong>Age: </strong></li>
+                            <li>32</li>
+                            <li><strong>Location: </strong></li>
+                            <li>Saint Paul, MN</li>
+                            <li><strong>Favorite Whiskey: </strong></li>
+                            <li>Ardbeg</li>
+                        </ul>
                     </div>
-                </div>        
-                <hr>
-                <h3>Test</h3>
-                <p>Lorem ipsum...</p>
+                    <div class="user-bio">
+                        <hr>
+                        <h3>Test</h3>
+                        <p>Lorem ipsum...</p>
+                    </div>
+                </div>       
             </div>
             <div class="col-sm-2 sidenav">
                 <div class="well">
