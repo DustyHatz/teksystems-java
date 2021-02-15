@@ -1,0 +1,37 @@
+<!DOCTYPE html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        function calc(str) {
+
+            if (str.length == 0) {
+                return 0;
+            } else {
+                var no_spaces = str.split(" ");
+                var new_str = no_spaces.join("");
+                var sum = eval(new_str.replaceAll("^", "**2"));
+                return "Sum: " + sum;
+            }
+        }
+
+        str = prompt("Enter sequence: ");
+        // test sequence
+        // var str = "5^ ;1000 + 6^ - 5^ + 1;";
+        var new_str = str.split(";");
+        // in future add condition to check if last value is empty string
+        new_str.pop();
+        console.log(new_str);
+
+        for (let i = 0; i < new_str.length; i++) {
+            console.log(calc(new_str[i]));
+        }
+    </script>
+</body>
+
+</html>
