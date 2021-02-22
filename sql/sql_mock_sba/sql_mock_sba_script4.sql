@@ -1,5 +1,16 @@
-/* Create a query to return the Order Id, Item name, Item Price, and Quantity from orders made at stores in the city “New York”. Order by Order Id in ascending order.  */
-
-SELECT STORE_ID 
-FROM mock_sba.STORES
-WHERE CITY = 'New York';
+SELECT 
+    ORDER_ITEMS.ORDER_ID,
+    ITEMS.NAME,
+    ITEMS.PRICE,
+    ORDER_ITEMS.QUANTITY
+FROM
+    ITEMS
+        JOIN
+    ORDER_ITEMS ON ITEMS.ITEM_ID = ORDER_ITEMS.ITEM_ID
+        JOIN
+    ORDERS ON ORDER_ITEMS.ORDER_ID = ORDERS.ORDER_ID
+        JOIN
+    STORES ON ORDERS.STORE_ID = STORES.STORE_ID
+WHERE
+    STORES.CITY = 'New York'
+ORDER BY ORDER_ID;
