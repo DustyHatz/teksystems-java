@@ -2,11 +2,7 @@ SELECT
   course.name AS Course_Name 
 FROM 
   course 
+  LEFT JOIN facultycourse ON course.id = facultycourse.courseId 
 WHERE 
-  course.id NOT IN (
-    SELECT 
-      facultycourse.courseId 
-    FROM 
-      facultycourse
-  )
+  facultycourse.courseId IS NULL
 ORDER BY Course_Name;
