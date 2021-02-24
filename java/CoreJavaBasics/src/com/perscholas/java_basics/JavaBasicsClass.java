@@ -6,7 +6,9 @@ public class JavaBasicsClass {
 		
 		//addInt();
 		//addDouble();
-		addDoubleInt();
+		//addDoubleInt();
+		divideInt();
+		
 	}
 	
 	
@@ -48,6 +50,27 @@ public class JavaBasicsClass {
 		double result = a + b; // Result must be of type double
 		
 		System.out.println(result);
+		
+	}
+	
+	
+	private static void divideInt() {
+		
+		int a = 5;
+		int b = 2;
+		
+		// Integer division results in Java truncating the decimal portion
+		// and does not round to the closest integer
+		int result1 = a / b;
+		
+		
+		double c = 5.0; // Data type must be changed to double
+		int d = 2;
+		
+		// Still results in integer division
+		int result2 = a / b;
+		
+		System.out.printf("%d\n%d", result1, result2 );
 		
 	}
 		
