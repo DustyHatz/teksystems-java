@@ -4,8 +4,8 @@ public class JavaBasicsClass {
 
 	public static void main(String[] args) {
 		
-		addInt();
-		addDouble();
+		//addInt();
+		//addDouble();
 		addDoubleInt();
 	}
 	
