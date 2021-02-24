@@ -4,8 +4,9 @@ public class JavaBasicsClass {
 
 	public static void main(String[] args) {
 		
-		//addInt();
+		addInt();
 		addDouble();
+		addDoubleInt();
 	}
 	
 	
@@ -38,5 +39,16 @@ public class JavaBasicsClass {
 		
 	}
 	
+	
+	private static void addDoubleInt() {
+		
+		int a = 5;
+		double b = 1.0;
+		
+		double result = a + b; // Result must be of type double
+		
+		System.out.println(result);
+		
+	}
 		
 }
