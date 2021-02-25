@@ -11,7 +11,7 @@ public class JavaBasicsClass {
 		// divideDouble();
 		// intAssign();
 		// constant();
-		cafe();
+		// cafe();
 	}
 
 	/*
