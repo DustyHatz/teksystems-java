@@ -10,7 +10,8 @@ public class JavaBasicsClass {
 		// divideInt();
 		// divideDouble();
 		// intAssign();
-		constant();
+		// constant();
+		cafe();
 	}
 
 	/*
@@ -138,7 +139,35 @@ public class JavaBasicsClass {
 		int result = X + y;
 
 		System.out.println(result);
-		
+
+	}
+
+	/*
+	 * Write a program where you create 3 variables that represent products at a
+	 * cafe. The products could be beverages like coffee, cappuccino, espresso,
+	 * green tea, etc. Assign prices to each product. Create 2 more variables called
+	 * subtotal and totalSale and complete an “order” for 3 items of the first
+	 * product, 4 items of the second product, and 2 items of the third product. Add
+	 * them all together to calculate the subtotal. Create a constant called
+	 * SALES_TAX and add sales tax to the subtotal to obtain the totalSale amount.
+	 * Be sure to format the results to 2 decimal places.
+	 */
+	private static void cafe() {
+
+		double coffee = 1.50;
+		double donut = 2.50;
+		double tea = 3.00;
+
+		double order = (coffee * 3) + (donut * 4) + (tea * 2);
+
+		double subtotal = order;
+
+		final double SALES_TAX = 0.053;
+
+		double totalSale = subtotal + (subtotal * SALES_TAX);
+		System.out.printf("Subtotal: $%.2f %n", subtotal);
+		System.out.printf("Sales Tax: %.3f %n", SALES_TAX);
+		System.out.printf("Total Sale Amount: $%.2f %n", totalSale);
 	}
 
 }
