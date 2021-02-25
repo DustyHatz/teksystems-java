@@ -7,7 +7,8 @@ public class JavaBasicsClass {
 		//addInt();
 		//addDouble();
 		//addDoubleInt();
-		divideInt();
+		//divideInt();
+		divideDouble();
 		
 	}
 	
@@ -64,6 +65,22 @@ public class JavaBasicsClass {
 		
 		System.out.println("int divided by int: " + a / b);
 		System.out.println("int divided by double: " + c / d);
+				
+	}
+	
+	
+	private static void divideDouble() {
+		
+		double a = 5.0;
+		double b = 2.0;
+		
+		double result = a / b;
+
+		System.out.println("double divided by double: " + result);
+		
+		int result2 = (int)result; // Cast result to int
+		
+		System.out.println("Result after casting to int: " + result2);
 				
 	}
 		
