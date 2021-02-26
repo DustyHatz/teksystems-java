@@ -125,13 +125,18 @@ public class OperatorsAndNumbers extends JavaBasicsClass {
 	
 	public static void bitwiseOperator() {
 		
-		int x = 7;
-		int y = 17;
+		int x = 7; //  0000 0111
+		int y = 17; // 0001 0001
 		int z;
 		
 		z = 7 & 17; // true?
 		
 		System.out.println(z);
+		
+		z = 7 | 17; // 23?
+		
+		System.out.println(z);
+
 		
 	}
 
