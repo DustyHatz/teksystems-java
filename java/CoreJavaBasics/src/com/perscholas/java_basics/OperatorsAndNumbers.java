@@ -7,7 +7,8 @@ public class OperatorsAndNumbers extends JavaBasicsClass {
 		// intBinaryShiftOne();
 		// intBinaryShiftTwo();
 		// bitwiseOperator();
-		postfixIncrement();
+		// postfixIncrement();
+		multiIncrement();
 
 		/*
 		 * #1 Write the following integers in binary notation. Do not use any Java
@@ -149,12 +150,35 @@ public class OperatorsAndNumbers extends JavaBasicsClass {
 	public static void postfixIncrement() {
 
 		int x = 3;
-		
+
 		System.out.println(x);
-		
+
 		x++;
-				
+
 		System.out.println(x);
 
 	}
+
+	/*
+	 * Write a program that demonstrates at least 3 ways to increment a variable by
+	 * 1 and does this multiple times. Assign a value to an integer variable, print
+	 * it, increment by 1, print it again, increment by 1, and then print again.
+	 */
+
+	public static void multiIncrement() {
+
+		int x = 3;
+		System.out.println(x);
+
+		x++;
+		System.out.println(x);
+
+		++x;
+		System.out.println(x);
+
+		x += 1;
+		System.out.println(x);
+
+	}
+
 }
