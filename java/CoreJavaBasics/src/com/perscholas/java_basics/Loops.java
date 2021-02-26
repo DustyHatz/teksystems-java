@@ -6,7 +6,8 @@ public class Loops {
 		// printTen();
 		// everyTenth();
 		// doWhileToTen();
-		multOfFive1();
+		// multOfFive1();
+		multOfFive2();
 	}
 
 	/*
@@ -60,25 +61,30 @@ public class Loops {
 	private static void multOfFive1() {
 
 		for (int i = 1; i <= 100; i++) {
-			
+
 			if (!(i > 25 && i < 75) && (i % 5 == 0)) {
 				System.out.println(i);
 			}
 		}
 	}
 
+	/*
+	 * Write a program that uses a for-loop to loop through the numbers 1-100. Print
+	 * out each number if is a multiple of 5, but do not print out any numbers
+	 * greater than 50. Use the “break” keyword to accomplish this.
+	 */
+
+	private static void multOfFive2() {
+
+		for (int i = 1; i <= 100; i++) {
+
+			if (i % 5 == 0) {
+				if (i > 50) {
+					break;
+				}
+				System.out.println(i);
+			}
+		}
+	}
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
