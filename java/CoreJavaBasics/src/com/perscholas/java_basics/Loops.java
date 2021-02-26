@@ -4,7 +4,8 @@ public class Loops {
 
 	public static void main(String[] args) {
 		// printTen();
-		everyTenth();
+		// everyTenth();
+		doWhileToTen();
 	}
 
 	/*
@@ -31,6 +32,21 @@ public class Loops {
 			System.out.println(i);
 			i += 10;
 		}
+
+	}
+
+	/*
+	 * Write a program that uses a do-while-loop to loop through the numbers 1-10
+	 * and prints out each number.
+	 */
+	private static void doWhileToTen() {
+
+		int i = 1;
+
+		do {
+			System.out.println(i);
+			i++;
+		} while (i <= 10);
 
 	}
 
