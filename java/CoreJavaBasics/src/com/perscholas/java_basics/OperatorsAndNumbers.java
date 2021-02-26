@@ -4,8 +4,9 @@ public class OperatorsAndNumbers extends JavaBasicsClass {
 
 	public static void main(String[] args) {
 
-		//intBinaryShiftOne();
-		intBinaryShiftTwo();
+		// intBinaryShiftOne();
+		// intBinaryShiftTwo();
+		bitwiseOperator();
 
 		/*
 		 * #1 Write the following integers in binary notation. Do not use any Java
@@ -40,17 +41,17 @@ public class OperatorsAndNumbers extends JavaBasicsClass {
 
 		/*--------------------------------------------------------------------------------------------------------*/
 
-	/*
-	 * #3 Write a program that declares an integer a variable x and assigns the
-	 * value 2 to it and prints out the binary string version of the number (
-	 * Integer.toBinaryString(x) ). Now, use the left shift operator (<<) to shift
-	 * by 1 and assign the result to x. Before printing the results, write a comment
-	 * with the predicted decimal value and binary string. Now, print out x in
-	 * decimal form and in binary notation. Do the preceding exercise with the
-	 * following values:
-	 * 
-	 * 9 17 88
-	 */
+		/*
+		 * #3 Write a program that declares an integer a variable x and assigns the
+		 * value 2 to it and prints out the binary string version of the number (
+		 * Integer.toBinaryString(x) ). Now, use the left shift operator (<<) to shift
+		 * by 1 and assign the result to x. Before printing the results, write a comment
+		 * with the predicted decimal value and binary string. Now, print out x in
+		 * decimal form and in binary notation. Do the preceding exercise with the
+		 * following values:
+		 * 
+		 * 9 17 88
+		 */
 
 	}
 
@@ -97,7 +98,7 @@ public class OperatorsAndNumbers extends JavaBasicsClass {
 		System.out.println(x); // 150
 
 		x = x >> 2;
-		xBin = Integer.toBinaryString(x); 
+		xBin = Integer.toBinaryString(x);
 
 		System.out.println(xBin); // 0010 0101
 		System.out.println(x); // 37
@@ -110,6 +111,28 @@ public class OperatorsAndNumbers extends JavaBasicsClass {
 		System.out.println(xBin); // 0011 1000
 		System.out.println(x); // 56
 
+	}
+
+	/*
+	 * Write a program that declares 3 int variables x, y, and z. Assign 7 to x and
+	 * 17 to y. Write a comment that indicates what you predict will be the result
+	 * of the bitwise & operation on x and y. Now use the bitwise & operator to
+	 * derive the decimal and binary values and assign the result to z. Now, with
+	 * the preceding values, use the bitwise | operator to calculate the “or” value
+	 * between x and y. As before, write a comment that indicates what you predict
+	 * the values to be before printing them out.
+	 */
+	
+	public static void bitwiseOperator() {
+		
+		int x = 7;
+		int y = 17;
+		int z;
+		
+		z = 7 & 17; // true?
+		
+		System.out.println(z);
+		
 	}
 
 }
