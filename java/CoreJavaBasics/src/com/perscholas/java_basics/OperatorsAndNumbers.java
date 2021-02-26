@@ -6,7 +6,8 @@ public class OperatorsAndNumbers extends JavaBasicsClass {
 
 		// intBinaryShiftOne();
 		// intBinaryShiftTwo();
-		bitwiseOperator();
+		// bitwiseOperator();
+		postfixIncrement();
 
 		/*
 		 * #1 Write the following integers in binary notation. Do not use any Java
@@ -122,22 +123,38 @@ public class OperatorsAndNumbers extends JavaBasicsClass {
 	 * between x and y. As before, write a comment that indicates what you predict
 	 * the values to be before printing them out.
 	 */
-	
+
 	public static void bitwiseOperator() {
-		
-		int x = 7; //  0000 0111
+
+		int x = 7; // 0000 0111
 		int y = 17; // 0001 0001
 		int z;
-		
+
 		z = 7 & 17; // true?
-		
-		System.out.println(z);
-		
-		z = 7 | 17; // 23?
-		
+
 		System.out.println(z);
 
-		
+		z = 7 | 17; // 23?
+
+		System.out.println(z);
+
 	}
 
+	/*
+	 * Write a program that declares an integer variable, assigns a number, and uses
+	 * a postfix increment operator to increase the value. Print the value before
+	 * and after the increment operator.
+	 */
+
+	public static void postfixIncrement() {
+
+		int x = 3;
+		
+		System.out.println(x);
+		
+		x++;
+				
+		System.out.println(x);
+
+	}
 }
