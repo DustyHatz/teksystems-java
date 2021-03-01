@@ -10,7 +10,8 @@ public class Loops {
 		// multOfFive2();
 		// dayOfWeek();
 		// palindrome();
-		fibonacci();
+		// fibonacci();
+		nestedLoop();
 	}
 
 	/*
@@ -170,6 +171,22 @@ public class Loops {
 				break;
 			}
 
+		}
+
+	}
+
+	/*
+	 * Write a program that nests a for-loop inside another. Print out the inner and
+	 * outer variable (e.g., i or j) in the inner loop (e.g.,
+	 * System.out.println("Inner loop: i: " + i + ", j: " + j);).
+	 */
+
+	private static void nestedLoop() {
+
+		for (int i = 0; i <= 5; i++) {
+			for (int j = 0; j <= 5; j++) {
+				System.out.println("i:" + i + " j:" + j);
+			}
 		}
 
 	}
