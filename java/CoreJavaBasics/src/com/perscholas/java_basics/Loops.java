@@ -9,7 +9,8 @@ public class Loops {
 		// multOfFive1();
 		// multOfFive2();
 		// dayOfWeek();
-		palindrome();
+		// palindrome();
+		fibonacci();
 	}
 
 	/*
@@ -146,16 +147,30 @@ public class Loops {
 
 		}
 	}
+
+	/*
+	 * Write a program that prints the Fibonacci Sequence from 0 to 50. The
+	 * following output will be produced: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34,
+	 */
+
+	private static void fibonacci() {
+
+		int temp1 = 0;
+		int temp2 = 1;
+
+		while (true) {
+
+			System.out.println(temp1);
+
+			int temp3 = temp1 + temp2;
+			temp1 = temp2;
+			temp2 = temp3;
+
+			if (temp1 >= 50) {
+				break;
+			}
+
+		}
+
+	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
