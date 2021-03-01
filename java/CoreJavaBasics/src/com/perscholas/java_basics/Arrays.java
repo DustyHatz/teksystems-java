@@ -9,7 +9,8 @@ public class Arrays {
 		// cloneArray();
 		// indexOutOfBounds();
 		// assignIndexLoop();
-		assignIndexX2();
+		// assignIndexX2();
+		notMiddleIndex();
 	}
 
 	/*
@@ -109,4 +110,21 @@ public class Arrays {
 
 	}
 
+	/*
+	 * Write a program where you create an array of 5 elements. Loop through the
+	 * array and print the value of each element, except for the middle (index 2)
+	 * element.
+	 */
+	private static void notMiddleIndex() {
+
+		int[] array = new int[] { 1, 2, 3, 4, 5 };
+
+		for (int i = 0; i < array.length; i++) {
+
+			if (i != array.length / 2) {
+				System.out.println(array[i]);
+			}
+		}
+
+	}
 }
