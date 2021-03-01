@@ -3,7 +3,7 @@ package com.perscholas.java_basics;
 import java.util.Arrays;
 
 public class ArraysBasics {
-	
+
 	public static void main(String[] args) {
 
 		// arrayOfThree();
@@ -14,7 +14,7 @@ public class ArraysBasics {
 		// assignIndexX2();
 		// notMiddleIndex();
 		// swapFirstMiddle();
-		sortLargestSmallest();
+		sortBiggestSmallest();
 	}
 
 	/*
@@ -160,11 +160,22 @@ public class ArraysBasics {
 	 * 
 	 * The biggest number is 13
 	 */
-	private static void sortLargestSmallest() {
-		
-		int[] array = new int[] {4, 2, 9, 13, 1, 0};
-		
-		
+	private static void sortBiggestSmallest() {
+
+		int[] array = new int[] { 4, 2, 9, 13, 1, 0 };
+
+		Arrays.sort(array);
+
+		int smallest = array[0];
+		int biggest = array[array.length - 1];
+
+		System.out.print("Array in ascending order: ");
+		for (int num : array) {
+			System.out.print(num + ", ");
+		}
+		System.out.println();
+		System.out.println("The smallest number is " + smallest);
+		System.out.println("The biggest number is " + biggest);
 
 	}
 }
