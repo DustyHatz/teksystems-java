@@ -14,7 +14,8 @@ public class ArraysBasics {
 		// assignIndexX2();
 		// notMiddleIndex();
 		// swapFirstMiddle();
-		sortBiggestSmallest();
+		// sortBiggestSmallest();
+		arrayDifferentTypes();
 	}
 
 	/*
@@ -176,6 +177,20 @@ public class ArraysBasics {
 		System.out.println();
 		System.out.println("The smallest number is " + smallest);
 		System.out.println("The biggest number is " + biggest);
+
+	}
+
+	/*
+	 * Create an array that includes an integer, 3 strings, and 1 double. Print the
+	 * array.
+	 */
+	private static void arrayDifferentTypes() {
+
+		Object[] types = new Object[] { 1, "two", "three", "four", 5.0 };
+
+		for (int i = 0; i < types.length; i++) {
+			System.out.println(types[i]);
+		}
 
 	}
 }
