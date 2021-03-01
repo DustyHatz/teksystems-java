@@ -7,7 +7,8 @@ public class Arrays {
 		// arrayOfThree();
 		// middleElement();
 		// cloneArray();
-		indexOutOfBounds();
+		// indexOutOfBounds();
+		assignIndexLoop();
 	}
 
 	/*
@@ -64,7 +65,6 @@ public class Arrays {
 	 * of exception which is produced. Now try to assign a value to the array index
 	 * 5. You should get the same type of exception.
 	 */
-
 	private static void indexOutOfBounds() {
 
 		int[] array = new int[] { 1, 2, 3, 4, 5 };
@@ -76,4 +76,19 @@ public class Arrays {
 
 	}
 
+	/*
+	 * Write a program where you create an integer array with a length of 5. Loop
+	 * through the array and assign the value of the loop control variable (e.g., i)
+	 * to the corresponding index in the array.
+	 */
+	private static void assignIndexLoop() {
+
+		int[] array = new int[] { 1, 2, 3, 4, 5 };
+
+		for (int i = 0; i < array.length; i++) {
+			array[i] = i;
+			System.out.println(array[i]);
+		}
+
+	}
 }
