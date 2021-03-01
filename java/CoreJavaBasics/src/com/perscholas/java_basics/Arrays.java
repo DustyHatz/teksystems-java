@@ -4,7 +4,8 @@ public class Arrays {
 
 	public static void main(String[] args) {
 
-		arrayOfThree();
+		// arrayOfThree();
+		middleElement();
 	}
 
 	/*
@@ -20,4 +21,16 @@ public class Arrays {
 		}
 	}
 
+	/*
+	 * Write a program that returns the middle element in an array. Give the
+	 * following values to the integer array: {13, 5, 7, 68, 2} and produce the
+	 * following output: 7
+	 */
+	private static void middleElement() {
+
+		int[] array = new int[] { 13, 5, 7, 68, 2 };
+
+		System.out.println(array[array.length / 2]);
+
+	}
 }
