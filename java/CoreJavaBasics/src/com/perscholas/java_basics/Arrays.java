@@ -8,7 +8,8 @@ public class Arrays {
 		// middleElement();
 		// cloneArray();
 		// indexOutOfBounds();
-		assignIndexLoop();
+		// assignIndexLoop();
+		assignIndexX2();
 	}
 
 	/*
@@ -91,4 +92,21 @@ public class Arrays {
 		}
 
 	}
+
+	/*
+	 * Write a program where you create an integer array of 5 numbers. Loop through
+	 * the array and assign the value of the loop control variable multiplied by 2
+	 * to the corresponding index in the array.
+	 */
+	private static void assignIndexX2() {
+
+		int[] array = new int[] { 1, 2, 3, 4, 5 };
+
+		for (int i = 0; i < array.length; i++) {
+			array[i] = i * 2;
+			System.out.println(array[i]);
+		}
+
+	}
+
 }
