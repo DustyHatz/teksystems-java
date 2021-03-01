@@ -10,7 +10,8 @@ public class Arrays {
 		// indexOutOfBounds();
 		// assignIndexLoop();
 		// assignIndexX2();
-		notMiddleIndex();
+		// notMiddleIndex();
+		swapFirstMiddle();
 	}
 
 	/*
@@ -124,6 +125,24 @@ public class Arrays {
 			if (i != array.length / 2) {
 				System.out.println(array[i]);
 			}
+		}
+
+	}
+
+	/*
+	 * Write a program that creates a String array of 5 elements and swaps the first
+	 * element with the middle element without creating a new array.
+	 */
+	private static void swapFirstMiddle() {
+
+		String[] array = new String[] { "First", "Second", "Middle", "Fourth", "Last" };
+
+		String temp = array[0];
+		array[0] = array[array.length / 2];
+		array[array.length / 2] = temp;
+
+		for (String word : array) {
+			System.out.println(word);
 		}
 
 	}
