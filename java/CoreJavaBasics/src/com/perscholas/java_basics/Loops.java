@@ -8,7 +8,8 @@ public class Loops {
 		// doWhileToTen();
 		// multOfFive1();
 		// multOfFive2();
-		dayOfWeek();
+		// dayOfWeek();
+		palindrome();
 	}
 
 	/*
@@ -127,4 +128,34 @@ public class Loops {
 		}
 	}
 
+	/*
+	 * Write a program that returns all the available palindromes within 10 and 200.
+	 * The following output will be produced: 11, 22, 33, 44, 55, 66, 77, 88, 99,
+	 * 101, 111, 121, 131, 141, 151, 161, 171, 181, 191,
+	 */
+
+	private static void palindrome() {
+
+		for (int i = 10; i < 200; i++) {
+
+			String num = String.valueOf(i);
+
+			if (num.charAt(0) == num.charAt(num.length() - 1)) {
+				System.out.println(num);
+			}
+
+		}
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
