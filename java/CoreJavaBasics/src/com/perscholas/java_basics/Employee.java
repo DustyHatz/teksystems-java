@@ -20,4 +20,11 @@ public class Employee {
 
 	}
 
+	public void calculateSalary() {
+		double salary = this.basicSalary + (this.basicSalary * this.specialAllowance / 100)
+				+ (this.basicSalary * this.hra / 100);
+		
+		System.out.println(salary);
+	}
+
 }
