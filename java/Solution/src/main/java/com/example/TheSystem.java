@@ -55,6 +55,14 @@ public abstract class TheSystem {
 
 	public Boolean checkAvailability(Item item) {
 		// Your code here
+		if (item.getQuantity() >= item.getAvailableQuantity()) {
+			
+			System.out.printf("System is unable to add %s to the card. System only has %d %ss", item.getItemName(),
+					item.getAvailableQuantity(), item.getItemName());
+			
+			return false;
+		}
+		return true;
 	}
 
 	public Boolean add(Item item) {
