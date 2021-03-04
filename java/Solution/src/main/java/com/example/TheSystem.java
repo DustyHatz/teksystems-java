@@ -7,9 +7,11 @@ import java.util.Scanner;
 
 public abstract class TheSystem {
    
+	HashMap<String, Item> itemCollection;
 
     TheSystem() {
         // Your code here
+    	this.itemCollection = new HashMap<String, Item>();
     }
     
     public HashMap<String, Item> getItemCollection(){
