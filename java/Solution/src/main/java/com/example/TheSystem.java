@@ -79,7 +79,10 @@ public abstract class TheSystem {
 
 	public Item remove(String itemName) {
 		// Your code here
-		
+		if (itemCollection.containsKey(itemName)) {
+			return itemCollection.remove(itemName);
+		}
+		return null;
 	}
 
 	public abstract void display();
