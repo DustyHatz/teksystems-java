@@ -1,18 +1,22 @@
 package com.example;
 
+// Class for an Item
 public class Item {
 
+	// Declare instance variables for Item
 	private String itemName;
 	private String itemDesc;
 	private Double itemPrice;
 	private Integer quantity;
 	private Integer availableQuantity;
 
+	// Default constructor. Set default quantity to 1
 	public Item() {
 		// Your code here
 		this.quantity = 1;
 	}
 
+	// Constructor method
 	public Item(String itemName, String itemDesc, Double itemPrice, Integer availableQuantity) {
 		// Your code here
 		this.itemName = itemName;
@@ -22,6 +26,9 @@ public class Item {
 		this.availableQuantity = availableQuantity;
 	}
 
+	/**
+	 * Getters and setters for each instance variable in Item
+	 * */
 	public String getItemName() {
 		return itemName;
 	}
