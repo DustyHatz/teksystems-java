@@ -9,11 +9,11 @@ public class AppSystem extends TheSystem {
     public void display() {
         // Your code here
     	System.out.println("AppSystem Inventory:");
-		System.out.printf("%-20s %-20s %-20s %-20s%n", "Name", "Description", "Price", "Available Quantity");
+		System.out.printf("%-20s %-20s %-10s %-10s%n", "Name", "Description", "Price", "Available Quantity");
 		
 		for (String item : itemCollection.keySet()) {
 			
-			System.out.printf("%-20s %-20s %-20s %-20s",
+			System.out.printf("%-20s %-20s %-10.2f %-10d%n",
 					itemCollection.get(item.toString()).getItemName(),
 					itemCollection.get(item.toString()).getItemDesc(),
 					itemCollection.get(item.toString()).getItemPrice(),
