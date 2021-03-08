@@ -31,6 +31,18 @@ public class AppSystem extends TheSystem {
 
     public Item reduceAvailableQuantity(String item_name) {
         // Your code here
-    	
+    	if(!itemCollection.containsKey(item_name)) {
+			return null;
+		}
+    	else if( itemCollection.get(item_name).getAvailableQuantity() == 0 ) {
+    		itemCollection.remove(item_name);
+    		return null;
+    	}
+    	Item setItem = itemCollection.get(item_name);
+    	setItem.setAvailableQuantity(setItem.getAvailableQuantity() - 1);
+    	itemCollection.remove(item_name);
+    	itemCollection.put(item_name, setItem);
+		return setItem;
+    }
     
 }
