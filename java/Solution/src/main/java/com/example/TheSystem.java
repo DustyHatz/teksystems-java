@@ -7,30 +7,34 @@ import java.util.Scanner;
 
 public abstract class TheSystem {
 
-	private HashMap<String, Item> itemCollection;
-
+	HashMap<String, Item> itemCollection;
+	
 	TheSystem() {
 		// Your code here
-		this.itemCollection = new HashMap<String, Item>();
+		
+		HashMap<String, Item> itemCollection;
 
 		if (getClass().getSimpleName().equals("AppSystem")) {
 			// Add items from sample.txt to the itemCollection
 			try {
-				String filePath = "./resources/samples.txt";
+				itemCollection = new HashMap<String, Item>();
+				String filePath = "./resources/sample.txt";
 				File file = new File(filePath);
 				Scanner scn = new Scanner(file);
 
 				while (scn.hasNextLine()) {
+					
+					
+					String[] items = scn.nextLine().split("  ");
 
-					// tell Scanner to use double space as the delimiter before reading
-					scn.useDelimiter("  ");
 
 					// scan line for the itemName String, then the itemDesc String, then itemPrice
 					// Double, then availableQuantity Integer
-					String itemName = scn.next();
-					String itemDesc = scn.next();
-					Double itemPrice = scn.nextDouble();
-					Integer availableQuantity = scn.nextInt();
+					String itemName = items[0];
+					String itemDesc = items[1];
+					Double itemPrice = Double.valueOf(items[2]);
+					Integer availableQuantity = Integer.valueOf(items[3]);
+					
 
 					// enter itemName as key and create a new Item with the above saved variables as
 					// value into the itemCollection
@@ -67,12 +71,14 @@ public abstract class TheSystem {
 
 	public Boolean add(Item item) {
 		// Your code here
-		if (item.equals(null)) {
+		if (item == null) {
 			return false;
 		} else if (itemCollection.containsKey(item.getItemName())) {
 			item.setQuantity(item.getQuantity() + 1);
+			return true;
 		} else if (!itemCollection.containsKey(item.getItemName())) {
 			itemCollection.put(item.getItemName(), item);
+			return true;
 		}
 		return false;
 	}

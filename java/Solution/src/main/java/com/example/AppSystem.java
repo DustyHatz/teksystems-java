@@ -2,6 +2,7 @@ package com.example;
 
 public class AppSystem extends TheSystem {
     AppSystem() {
+    	
     }
 
     @Override
@@ -12,9 +13,11 @@ public class AppSystem extends TheSystem {
     @Override      // this overwrites the parents class add method 
     public Boolean add(Item item) {
         // Your code here
+    	return true;
     }
 
     public Item reduceAvailableQuantity(String item_name) {
         // Your code here
+    	return null;
     }
 }
