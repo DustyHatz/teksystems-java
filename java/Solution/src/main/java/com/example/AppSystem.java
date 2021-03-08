@@ -43,12 +43,16 @@ public class AppSystem extends TheSystem {
 		} else if (itemCollection.get(item_name).getAvailableQuantity() == 0) {
 			itemCollection.remove(item_name);
 			return null;
+		} else {
+			Integer currentAvailQ = itemCollection.get(item_name).getAvailableQuantity();
+			itemCollection.get(item_name).setAvailableQuantity(currentAvailQ - 1);
+			if (itemCollection.get(item_name).getAvailableQuantity() == 0) {
+				itemCollection.remove(item_name);
+				return null;
+			}
+			return itemCollection.get(item_name);
 		}
-		Item setItem = itemCollection.get(item_name);
-		setItem.setAvailableQuantity(setItem.getAvailableQuantity() - 1);
-		itemCollection.remove(item_name);
-		itemCollection.put(item_name, setItem);
-		return setItem;
+
 	}
 
 }
