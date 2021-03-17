@@ -1,9 +1,11 @@
 package week8EmployeeAppJpa.entities;
 
 import javax.persistence.Basic;
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
 @Entity
+@DiscriminatorValue(value="TS")
 public class TeachingStaff extends Staff {
 	
 	@Basic
