@@ -5,6 +5,7 @@
 	<!-- Entities/Models ==> tables -->
 	<!-- package_name.class_name -->
 	<class>week8EmployeeAppJpa.entities.Employee</class>
+	<class>week8EmployeeAppJpa.entities.NonTeachingStaff</class>
 	<class>week8EmployeeAppJpa.entities.Staff</class>
 	<class>week8EmployeeAppJpa.entities.TeachingStaff</class>
 	

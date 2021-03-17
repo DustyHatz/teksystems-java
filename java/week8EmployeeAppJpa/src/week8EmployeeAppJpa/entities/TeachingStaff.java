@@ -20,6 +20,11 @@ public class TeachingStaff extends Staff {
 	}
 	
 	// constructor
+	public TeachingStaff(int sId, String sName) {
+		super(sId, sName);
+	}
+	
+	// constructor
 	public TeachingStaff(int sId, String sName, String qualification, String subjectExperties) {
 		super(sId, sName);
 		this.qualification = qualification;

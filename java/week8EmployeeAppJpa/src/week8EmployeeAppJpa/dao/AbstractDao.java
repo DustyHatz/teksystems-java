@@ -7,13 +7,13 @@ import javax.persistence.Persistence;
 public class AbstractDao {
 
 	// Connection string
-	protected EntityManagerFactory emf = null;
-	protected EntityManager em = null;
-	private final String PERSISTENCE_UNIT_NAME = "week8EmployeeAppJpa";
+	protected static EntityManagerFactory emf = null;
+	protected static EntityManager em = null;
+	private final static String PERSISTENCE_UNIT_NAME = "week8EmployeeAppJpa";
 	
 
 	// Connect method
-	public void connect() {
+	public static void connect() {
 		
 		emf = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);
 		em = emf.createEntityManager();
@@ -21,7 +21,7 @@ public class AbstractDao {
 	}
 
 	// Close connections method
-	public void dispose() {
+	public static void dispose() {
 	
 		if(em.isOpen()) em.close();
 		if(emf.isOpen()) emf.close();
