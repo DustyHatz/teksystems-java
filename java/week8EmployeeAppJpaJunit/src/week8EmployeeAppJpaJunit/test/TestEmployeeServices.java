@@ -9,11 +9,15 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.MethodOrderer;
+import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestMethodOrder;
 
 import week8EmployeeAppJpaJunit.dao.EmployeeServices;
 import week8EmployeeAppJpaJunit.entities.Employee;
 
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class TestEmployeeServices {
 	
 	static EmployeeServices employeeServices = new EmployeeServices();
@@ -35,6 +39,7 @@ class TestEmployeeServices {
 	}
 
 	@Test
+	@Order(1)
 	void testAddEmployee() {
 
 		//fail("Not yet implemented");
@@ -54,6 +59,7 @@ class TestEmployeeServices {
 	}
 
 	@Test
+	@Order(2)
 	void testGetEmployee() {
 		//fail("Not yet implemented");
 		//assertTrue(true);
@@ -67,6 +73,7 @@ class TestEmployeeServices {
 	}
 
 	@Test
+	@Order(3)
 	void testUpdateEmployeeById() {
 		//fail("Not yet implemented");
 		//assertTrue(true);
@@ -80,6 +87,7 @@ class TestEmployeeServices {
 	}
 
 	@Test
+	@Order(5)
 	void testDeleteEmployeeById() {
 		//fail("Not yet implemented");
 		//assertTrue(true);
@@ -94,13 +102,14 @@ class TestEmployeeServices {
 	}
 
 	@Test
+	@Order(4)
 	void testGetAllEmployees() {
 		//fail("Not yet implemented");
 		//assertTrue(true);
 		
 		List<Employee> expectedEmployees = new ArrayList<>();
 		expectedEmployees.add(new Employee(901, "Amy", "Albrecht", 9001.00));
-		expectedEmployees.add(new Employee(902, "Dustin", "Hatzenbuhler", 9001.00));
+		expectedEmployees.add(new Employee(902, "Dustin", "Hatzenbuhler", 9002.00));
 		
 		List<Employee> actualEmployees = employeeServices.getAllEmployees();
 		
