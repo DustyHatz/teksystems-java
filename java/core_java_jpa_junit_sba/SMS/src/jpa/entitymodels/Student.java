@@ -18,8 +18,8 @@ public class Student {
 	@Basic
 	List<String> sCourses; // all of the courses that a student is registered for
 	
+	
 	// default constructor
-
 	public Student() {
 		super();
 	}

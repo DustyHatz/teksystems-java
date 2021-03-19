@@ -8,7 +8,7 @@ import javax.persistence.Id;
 public class Course {
 	
 	@Id
-	private int cld; 				// unique course id
+	private int cId; 				// unique course id
 	@Basic
 	private String cName; 			// name of the course
 	@Basic
@@ -23,17 +23,17 @@ public class Course {
 	// constructor
 	public Course(int cld, String cName, String cInstructorName) {
 		super();
-		this.cld = cld;
+		this.cId = cld;
 		this.cName = cName;
 		this.cInstructorName = cInstructorName;
 	}
 	
 	// getters and setters
 	public int getCld() {
-		return cld;
+		return cId;
 	}
 	public void setCld(int cld) {
-		this.cld = cld;
+		this.cId = cld;
 	}
 	public String getcName() {
 		return cName;
@@ -55,7 +55,7 @@ public class Course {
 		int result = 1;
 		result = prime * result + ((cInstructorName == null) ? 0 : cInstructorName.hashCode());
 		result = prime * result + ((cName == null) ? 0 : cName.hashCode());
-		result = prime * result + cld;
+		result = prime * result + cId;
 		return result;
 	}
 	
@@ -79,7 +79,7 @@ public class Course {
 				return false;
 		} else if (!cName.equals(other.cName))
 			return false;
-		if (cld != other.cld)
+		if (cId != other.cId)
 			return false;
 		return true;
 	}
