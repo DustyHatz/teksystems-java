@@ -12,17 +12,17 @@ public class StudentService extends HelpersService implements StudentDAO {
 
 	@Override
 	public List<Student> getAllStudents() {
-		
+
 		List<Student> students = null;
-		
+
 		connect();
-		
+
 		String getAllStudents = "SELECT s FROM Student s";
-		
+
 		TypedQuery<Student> query = em.createQuery(getAllStudents, Student.class);
-		
+
 		students = query.getResultList();
-		
+
 		return students;
 	}
 
@@ -30,11 +30,11 @@ public class StudentService extends HelpersService implements StudentDAO {
 	public Student getStudentByEmail(String sEmail) {
 
 		Student student = null;
-		
+
 		connect();
-		
+
 		student = em.find(Student.class, sEmail);
-		
+
 		dispose();
 
 		return student;
@@ -42,42 +42,32 @@ public class StudentService extends HelpersService implements StudentDAO {
 
 	@Override
 	public boolean validateStudent(String sEmail, String sPassword) {
+
+		boolean isValid = getAllStudents().stream()
+				.anyMatch(students -> students.getsEmail().equals(sEmail) && students.getsPass().equals(sPassword));
 		
-		// get list of all students
-		List <Student> students = getAllStudents();
-		// 
-		
-		if (getStudentByEmail(sEmail) != null) {
-			Student studentToValidate = getStudentByEmail(sEmail);
-			Student studentInStudents = null;
-		
-			if (students.contains(studentToValidate)) {
-				studentInStudents = studentToValidate;
-				
-				if (studentInStudents.getsPass().equals(sPassword)) {
-					System.out.println("Student is valid!");
-					return true;
-				}
-			}
-		} 
+		if (isValid) {
+			System.out.println("Student is valid!");
+			return true;
+		}
 		System.out.println("Student NOT valid!");
 		return false;
-		
+
 	}
 
 	@Override
 	public void registerStudentToCourse(String sEmail, int cId) {
-		
+
 		connect();
-		
+
 		// if student email exists in student table
-		
-			// if the 
-		
+
+		// if the
+
 		em.getTransaction().begin();
 		em.persist(sEmail);
 		em.getTransaction().commit();
-		
+
 		dispose();
 
 	}

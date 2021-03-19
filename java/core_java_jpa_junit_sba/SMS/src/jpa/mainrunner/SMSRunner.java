@@ -11,7 +11,7 @@ public class SMSRunner {
 
 		StudentService ss = new StudentService();
 		
-		System.out.println(ss.validateStudent("aiannitti7@is.gd", "TWP4hf5j"));
+		System.out.println(ss.validateStudent("aiannitti7@is.gd", "FnVklVgC6r6"));
 		
 	}
 
