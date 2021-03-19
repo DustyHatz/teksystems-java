@@ -29,7 +29,15 @@ public class StudentService extends HelpersService implements StudentDAO {
 	@Override
 	public Student getStudentByEmail(String sEmail) {
 
-		return null;
+		Student student = null;
+		
+		connect();
+		
+		student = em.find(Student.class, sEmail);
+		
+		dispose();
+
+		return student;
 	}
 
 	@Override
