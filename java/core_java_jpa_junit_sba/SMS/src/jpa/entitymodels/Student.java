@@ -2,14 +2,20 @@ package jpa.entitymodels;
 
 import java.util.List;
 
+import javax.persistence.Basic;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Entity
 public class Student {
 	
+	@Id
 	private String sEmail; // student's email, unique id
+	@Basic
 	private String sName;  // full name of student
+	@Basic
 	private String sPass;  // student's password
+	@Basic
 	List<String> sCourses; // all of the courses that a student is registered for
 	
 	// default constructor

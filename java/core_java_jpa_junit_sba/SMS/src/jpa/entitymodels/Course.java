@@ -1,12 +1,17 @@
 package jpa.entitymodels;
 
+import javax.persistence.Basic;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Entity
 public class Course {
 	
+	@Id
 	private int cld; 				// unique course id
+	@Basic
 	private String cName; 			// name of the course
+	@Basic
 	private String cInstructorName; // name of the instructor
 	
 	
