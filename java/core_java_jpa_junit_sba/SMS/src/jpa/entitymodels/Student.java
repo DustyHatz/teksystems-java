@@ -7,6 +7,8 @@ import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinTable;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -15,15 +17,17 @@ public class Student {
 	
 	@Id
 	@Column(name = "email")
-	private String sEmail; // student's email, unique id
+	private String sEmail; 			// student's email, unique id
 	@Basic
 	@Column(name = "name")
-	private String sName;  // full name of student
+	private String sName;  			// full name of student
 	@Basic
 	@Column(name = "password")
-	private String sPass;  // student's password
+	private String sPass;  			// student's password
 	
-	List<String> sCourses; // all of the courses that a student is registered for
+	@OneToMany(targetEntity = Course.class)
+	@JoinTable(name = "student_course")
+	private List<Course> sCourses;  // all of the courses that a student is registered for
 	
 	
 	// default constructor
@@ -32,7 +36,7 @@ public class Student {
 	}
 
 	// constructor
-	public Student(String sEmail, String sName, String sPass, List<String> sCourses) {
+	public Student(String sEmail, String sName, String sPass, List<Course> sCourses) {
 		super();
 		this.sEmail = sEmail;
 		this.sName = sName;
@@ -66,11 +70,11 @@ public class Student {
 		this.sPass = sPass;
 	}
 
-	public List<String> getsCourses() {
+	public List<Course> getsCourses() {
 		return sCourses;
 	}
 
-	public void setsCourses(List<String> sCourses) {
+	public void setsCourses(List<Course> sCourses) {
 		this.sCourses = sCourses;
 	}
 	

@@ -23,6 +23,8 @@ public class SMSRunner2 {
 			
 			em.close();
 			emf.close();
+			
+			System.out.println(em.isOpen()?"CONNECTED..." : "NOT CONNECTED...");
 		}
 
 }
