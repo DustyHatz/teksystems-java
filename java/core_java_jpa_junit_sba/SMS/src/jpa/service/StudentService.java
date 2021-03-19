@@ -17,7 +17,7 @@ public class StudentService extends HelpersService implements StudentDAO {
 		
 		connect();
 		
-		String getAllStudents = "SELECT s FROM STUDENT s";
+		String getAllStudents = "SELECT s FROM Student s";
 		
 		TypedQuery<Student> query = em.createQuery(getAllStudents, Student.class);
 		
@@ -48,7 +48,11 @@ public class StudentService extends HelpersService implements StudentDAO {
 
 	@Override
 	public void registerStudentToCourse(String sEmail, int cId) {
-		// TODO Auto-generated method stub
+		
+		connect();
+		
+		em.getTransaction().begin();
+		em.persist(sEmail);
 
 	}
 
