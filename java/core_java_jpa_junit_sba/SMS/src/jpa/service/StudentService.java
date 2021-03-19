@@ -57,18 +57,25 @@ public class StudentService extends HelpersService implements StudentDAO {
 
 	@Override
 	public void registerStudentToCourse(String sEmail, int cId) {
+		
+		Student student = getStudentByEmail(sEmail);
+		
+		// check if student is valid
+		if (validateStudent(student.getsEmail(), student.getsPass())) {
+			
+			try {
+				String query = "INSERT INTO student_course (Student_email ,sCourses_id ) VALUES (?,?)";
+				connect();
 
-		connect();
+				/* TO DO */
 
-		// if student email exists in student table
-
-		// if the
-
-		em.getTransaction().begin();
-		em.persist(sEmail);
-		em.getTransaction().commit();
-
-		dispose();
+				dispose();
+				
+			} catch(Exception e) {
+				System.out.println(e.getMessage());
+			}
+			
+		}
 
 	}
 
