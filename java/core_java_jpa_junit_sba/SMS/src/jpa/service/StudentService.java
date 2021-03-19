@@ -2,21 +2,33 @@ package jpa.service;
 
 import java.util.List;
 
+import javax.persistence.TypedQuery;
+
 import jpa.dao.StudentDAO;
 import jpa.entitymodels.Course;
 import jpa.entitymodels.Student;
 
-public class StudentService implements StudentDAO {
+public class StudentService extends HelpersService implements StudentDAO {
 
 	@Override
 	public List<Student> getAllStudents() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		List<Student> students = null;
+		
+		connect();
+		
+		String getAllStudents = "SELECT s FROM STUDENT s";
+		
+		TypedQuery<Student> query = em.createQuery(getAllStudents, Student.class);
+		
+		students = query.getResultList();
+		
+		return students;
 	}
 
 	@Override
 	public Student getStudentByEmail(String sEmail) {
-		// TODO Auto-generated method stub
+
 		return null;
 	}
 
