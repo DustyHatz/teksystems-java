@@ -42,8 +42,27 @@ public class StudentService extends HelpersService implements StudentDAO {
 
 	@Override
 	public boolean validateStudent(String sEmail, String sPassword) {
-		// TODO Auto-generated method stub
+		
+		// get list of all students
+		List <Student> students = getAllStudents();
+		// 
+		
+		if (getStudentByEmail(sEmail) != null) {
+			Student studentToValidate = getStudentByEmail(sEmail);
+			Student studentInStudents = null;
+		
+			if (students.contains(studentToValidate)) {
+				studentInStudents = studentToValidate;
+				
+				if (studentInStudents.getsPass().equals(sPassword)) {
+					System.out.println("Student is valid!");
+					return true;
+				}
+			}
+		} 
+		System.out.println("Student NOT valid!");
 		return false;
+		
 	}
 
 	@Override
@@ -51,8 +70,15 @@ public class StudentService extends HelpersService implements StudentDAO {
 		
 		connect();
 		
+		// if student email exists in student table
+		
+			// if the 
+		
 		em.getTransaction().begin();
 		em.persist(sEmail);
+		em.getTransaction().commit();
+		
+		dispose();
 
 	}
 

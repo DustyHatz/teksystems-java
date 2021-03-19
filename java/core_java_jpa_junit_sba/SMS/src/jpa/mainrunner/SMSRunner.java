@@ -2,21 +2,16 @@ package jpa.mainrunner;
 
 import jpa.entitymodels.Course;
 import jpa.service.CourseService;
+import jpa.service.StudentService;
 
 public class SMSRunner {
 
 	// MAIN METHOD
 	public static void main(String[] args) {
 
-		CourseService cs = new CourseService();
-		//Student student = ss.getStudentByEmail("cjaulme9@bing.com");
+		StudentService ss = new StudentService();
 		
-		
-		
-		for (Course c : cs.getAllCourses()) {
-			System.out.println(c.getcName());
-			
-		}
+		System.out.println(ss.validateStudent("aiannitti7@is.gd", "TWP4hf5j"));
 		
 	}
 
