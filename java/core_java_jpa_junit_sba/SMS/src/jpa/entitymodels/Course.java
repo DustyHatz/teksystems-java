@@ -1,6 +1,7 @@
 package jpa.entitymodels;
 
 import javax.persistence.Basic;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -10,10 +11,13 @@ import javax.persistence.Table;
 public class Course {
 	
 	@Id
+	@Column(name = "id")
 	private int cId; 				// unique course id
 	@Basic
+	@Column(name = "name")
 	private String cName; 			// name of the course
 	@Basic
+	@Column(name = "instructor")
 	private String cInstructorName; // name of the instructor
 	
 	
