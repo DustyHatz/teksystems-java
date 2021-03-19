@@ -1,20 +1,20 @@
 package jpa.mainrunner;
 
-import jpa.entitymodels.Student;
-import jpa.service.StudentService;
+import jpa.entitymodels.Course;
+import jpa.service.CourseService;
 
 public class SMSRunner {
 
 	// MAIN METHOD
 	public static void main(String[] args) {
 
-		StudentService ss = new StudentService();
+		CourseService cs = new CourseService();
 		//Student student = ss.getStudentByEmail("cjaulme9@bing.com");
 		
 		
 		
-		for (Student s : ss.getAllStudents()) {
-			System.out.println(s.getsName());
+		for (Course c : cs.getAllCourses()) {
+			System.out.println(c.getcName());
 			
 		}
 		

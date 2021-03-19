@@ -16,7 +16,7 @@ public class CourseService extends HelpersService implements CourseDAO {
 		
 		connect();
 		
-		String getAllCourses = "SELECT s FROM Student s";
+		String getAllCourses = "SELECT c FROM Course c";
 		
 		TypedQuery<Course> query = em.createQuery(getAllCourses, Course.class);
 		
