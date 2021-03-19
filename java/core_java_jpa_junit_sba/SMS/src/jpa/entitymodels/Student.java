@@ -7,10 +7,10 @@ import javax.persistence.Entity;
 @Entity
 public class Student {
 	
-	private String sEmail;
-	private String sName;
-	private String sPass;
-	List<String> sCourses;
+	private String sEmail; // student's email, unique id
+	private String sName;  // full name of student
+	private String sPass;  // student's password
+	List<String> sCourses; // all of the courses that a student is registered for
 	
 	// default constructor
 
@@ -27,6 +27,86 @@ public class Student {
 		this.sCourses = sCourses;
 	}
 	
-		
+
+	// getters and setters
+	public String getsEmail() {
+		return sEmail;
+	}
+
+	public void setsEmail(String sEmail) {
+		this.sEmail = sEmail;
+	}
+
+	public String getsName() {
+		return sName;
+	}
+
+	public void setsName(String sName) {
+		this.sName = sName;
+	}
+
+	public String getsPass() {
+		return sPass;
+	}
+
+	public void setsPass(String sPass) {
+		this.sPass = sPass;
+	}
+
+	public List<String> getsCourses() {
+		return sCourses;
+	}
+
+	public void setsCourses(List<String> sCourses) {
+		this.sCourses = sCourses;
+	}
+	
+	
+	// hashcode
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((sCourses == null) ? 0 : sCourses.hashCode());
+		result = prime * result + ((sEmail == null) ? 0 : sEmail.hashCode());
+		result = prime * result + ((sName == null) ? 0 : sName.hashCode());
+		result = prime * result + ((sPass == null) ? 0 : sPass.hashCode());
+		return result;
+	}
+
+	// equals
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Student other = (Student) obj;
+		if (sCourses == null) {
+			if (other.sCourses != null)
+				return false;
+		} else if (!sCourses.equals(other.sCourses))
+			return false;
+		if (sEmail == null) {
+			if (other.sEmail != null)
+				return false;
+		} else if (!sEmail.equals(other.sEmail))
+			return false;
+		if (sName == null) {
+			if (other.sName != null)
+				return false;
+		} else if (!sName.equals(other.sName))
+			return false;
+		if (sPass == null) {
+			if (other.sPass != null)
+				return false;
+		} else if (!sPass.equals(other.sPass))
+			return false;
+		return true;
+	}
+	
+	
 	
 }
