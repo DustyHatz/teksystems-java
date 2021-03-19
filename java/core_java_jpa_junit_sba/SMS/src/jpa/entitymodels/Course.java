@@ -3,8 +3,10 @@ package jpa.entitymodels;
 import javax.persistence.Basic;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table
 public class Course {
 	
 	@Id
