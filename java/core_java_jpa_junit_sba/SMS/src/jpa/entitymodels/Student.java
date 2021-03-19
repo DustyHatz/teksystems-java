@@ -2,7 +2,9 @@ package jpa.entitymodels;
 
 import java.util.List;
 
+
 import javax.persistence.Basic;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -12,12 +14,15 @@ import javax.persistence.Table;
 public class Student {
 	
 	@Id
+	@Column(name = "email")
 	private String sEmail; // student's email, unique id
 	@Basic
+	@Column(name = "name")
 	private String sName;  // full name of student
 	@Basic
+	@Column(name = "password")
 	private String sPass;  // student's password
-	@Basic
+	
 	List<String> sCourses; // all of the courses that a student is registered for
 	
 	
