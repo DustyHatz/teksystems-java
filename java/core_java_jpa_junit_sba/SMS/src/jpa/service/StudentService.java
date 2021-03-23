@@ -3,7 +3,6 @@ package jpa.service;
 import java.sql.ResultSet;
 import java.util.List;
 
-
 import javax.persistence.TypedQuery;
 
 import javax.persistence.Query;
@@ -49,7 +48,7 @@ public class StudentService extends HelpersService implements StudentDAO {
 
 		boolean isValid = getAllStudents().stream()
 				.anyMatch(students -> students.getsEmail().equals(sEmail) && students.getsPass().equals(sPassword));
-		
+
 		if (isValid) {
 			System.out.println("Student is valid!");
 			return true;
@@ -61,30 +60,44 @@ public class StudentService extends HelpersService implements StudentDAO {
 
 	@Override
 	public void registerStudentToCourse(String sEmail, int cId) {
+		connect();
 		
-		try {
+		if (em.find(Student.class, sEmail) != null && em.find(Course.class, cId) != null ) {
 			
-			connect();
-			em.getTransaction().begin();
 			Student student = em.find(Student.class, sEmail);
+			Course course = em.find(Course.class, cId);
 			List<Course> currentCourses = student.getsCourses();
-			Course courseToAdd = em.find(Course.class, cId);
-			currentCourses.add(courseToAdd);
-			em.getTransaction().commit();
-			
-		}catch(Exception e) {
-			e.printStackTrace();
-			
-		}finally {
+	
+			if (!currentCourses.contains(course)) {
+				try {
+	
+					em.getTransaction().begin();
+					currentCourses.add(course);
+					em.getTransaction().commit();
+	
+				} catch (Exception e) {
+					System.out.println("Error: Student could not be registered...");
+					dispose();
+				} 
+					dispose();
+					System.out.printf("Success: %s is now registered for %s%n", student.getsName(),course.getcName());
+					
+			} else {
+				dispose();
+				System.out.printf("Error: %s already registered for %s%n", student.getsName(),course.getcName());
+			}
+		} else {
 			dispose();
+			System.out.println("Error: Email or Course ID not found...");
 		}
-		
+
 	}
 
 	@Override
 	public List<Course> getStudentCourses(String sEmail) {
-		// TODO Auto-generated method stub
-		return null;
+		Student student = getStudentByEmail(sEmail);
+		System.out.printf("List of courses for %s:%n", student.getsName());
+		return student.getsCourses();
 	}
 
 }

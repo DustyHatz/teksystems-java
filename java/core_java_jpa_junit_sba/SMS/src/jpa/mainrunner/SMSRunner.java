@@ -12,8 +12,7 @@ public class SMSRunner {
 
 		StudentService ss = new StudentService();	
 		
-		ss.registerStudentToCourse("aiannitti7@is.gd", 3);
-		
+		ss.registerStudentToCourse("aiannitti7@is.gd", 1);
 		
 	}
 
