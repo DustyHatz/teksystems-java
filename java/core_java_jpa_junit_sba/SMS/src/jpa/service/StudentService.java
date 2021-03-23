@@ -1,8 +1,12 @@
 package jpa.service;
 
+import java.sql.ResultSet;
 import java.util.List;
 
+
 import javax.persistence.TypedQuery;
+
+import javax.persistence.Query;
 
 import jpa.dao.StudentDAO;
 import jpa.entitymodels.Course;
@@ -59,23 +63,44 @@ public class StudentService extends HelpersService implements StudentDAO {
 	public void registerStudentToCourse(String sEmail, int cId) {
 		
 		Student student = getStudentByEmail(sEmail);
+		List<Course> coursesToAdd = student.getsCourses();
 		
-		// check if student is valid
-		if (validateStudent(student.getsEmail(), student.getsPass())) {
+		// check if student exists
+		if (student != null) {
 			
 			try {
-				String query = "INSERT INTO student_course (Student_email ,sCourses_id ) VALUES (?,?)";
 				connect();
-
-				/* TO DO */
-
-				dispose();
+				
+				// Check if student is already registered for the course
+				Query check_courses = em.createNativeQuery("SELECT Student_email FROM student_course WHERE Student_email = ? AND sCourses_id = ?");
+				check_courses.setParameter(1, sEmail);
+				check_courses.setParameter(2, cId);
+				
+				String result = check_courses.getSingleResult().toString();
+				
+				if (result != "") {
+					
+					// get the course object tied to cId
+					Course course = em.find(Course.class, cId);
+					// add course to sCourses
+					coursesToAdd.add(course);
+					
+					// persist data
+					em.getTransaction().begin();
+					student.setsCourses(coursesToAdd);
+					em.persist(student);
+					em.getTransaction().commit();
+				}
+				System.out.println("Student is already registered!");
 				
 			} catch(Exception e) {
 				System.out.println(e.getMessage());
+				dispose();
 			}
-			
-		}
+			dispose();
+			System.out.println("Student now registered!");
+		} 
+		System.out.println("Error: Student not found.");
 
 	}
 
