@@ -1,6 +1,7 @@
 package jpa.service;
 
 import javax.persistence.EntityManager;
+
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
@@ -25,6 +26,14 @@ public class HelpersService {
 		
 			if(em.isOpen()) em.close();
 			if(emf.isOpen()) emf.close();
+		}
+		
+		public static void getCourseById(int cId) {
+			
+			if (Course.getCId() == null) {
+				
+			}
+			
 		}
 	
 	

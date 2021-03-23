@@ -27,19 +27,19 @@ public class Course {
 	}
 	
 	// constructor
-	public Course(int cld, String cName, String cInstructorName) {
+	public Course(int cId, String cName, String cInstructorName) {
 		super();
-		this.cId = cld;
+		this.cId = cId;
 		this.cName = cName;
 		this.cInstructorName = cInstructorName;
 	}
 	
 	// getters and setters
-	public int getCld() {
+	public int getCId() {
 		return cId;
 	}
-	public void setCld(int cld) {
-		this.cId = cld;
+	public void setCId(int cId) {
+		this.cId = cId;
 	}
 	public String getcName() {
 		return cName;
