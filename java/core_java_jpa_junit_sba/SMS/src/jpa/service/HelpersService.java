@@ -15,9 +15,13 @@ public class HelpersService {
 
 		// Connect method
 		public static void connect() {
-			
-			emf = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);
-			em = emf.createEntityManager();
+			try {
+				emf = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);
+				em = emf.createEntityManager();
+			} catch (Exception e) {
+				System.out.println("Error: Could not connect to database");
+				System.out.println(e.getMessage());
+			}
 			
 		}
 
@@ -26,14 +30,6 @@ public class HelpersService {
 		
 			if(em.isOpen()) em.close();
 			if(emf.isOpen()) emf.close();
-		}
-		
-		public static void getCourseById(int cId) {
-			
-			if (Course.getCId() == null) {
-				
-			}
-			
 		}
 	
 	
