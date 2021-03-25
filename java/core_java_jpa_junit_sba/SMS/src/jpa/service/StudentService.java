@@ -1,11 +1,8 @@
 package jpa.service;
 
-import java.sql.ResultSet;
 import java.util.List;
 
 import javax.persistence.TypedQuery;
-
-import javax.persistence.Query;
 
 import jpa.dao.StudentDAO;
 import jpa.entitymodels.Course;
@@ -18,13 +15,19 @@ public class StudentService extends HelpersService implements StudentDAO {
 
 		List<Student> students = null;
 
-		connect();
+		try {
 
-		String getAllStudents = "SELECT s FROM Student s";
+			connect();
 
-		TypedQuery<Student> query = em.createQuery(getAllStudents, Student.class);
+			String getAllStudents = "SELECT s FROM Student s";
 
-		students = query.getResultList();
+			TypedQuery<Student> query = em.createQuery(getAllStudents, Student.class);
+
+			students = query.getResultList();
+
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
 
 		return students;
 	}
@@ -34,9 +37,15 @@ public class StudentService extends HelpersService implements StudentDAO {
 
 		Student student = null;
 
-		connect();
+		try {
 
-		student = em.find(Student.class, sEmail);
+			connect();
+
+			student = em.find(Student.class, sEmail);
+
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
 
 		dispose();
 
@@ -60,43 +69,42 @@ public class StudentService extends HelpersService implements StudentDAO {
 
 	@Override
 	public void registerStudentToCourse(String sEmail, int cId) {
+		// connect to database
 		connect();
-		
-		if (em.find(Student.class, sEmail) != null && em.find(Course.class, cId) != null ) {
-			
+
+		if (em.find(Student.class, sEmail) != null && em.find(Course.class, cId) != null) {
+
 			Student student = em.find(Student.class, sEmail);
 			Course course = em.find(Course.class, cId);
 			List<Course> currentCourses = student.getsCourses();
-	
+
 			if (!currentCourses.contains(course)) {
 				try {
-	
+
 					em.getTransaction().begin();
 					currentCourses.add(course);
 					em.getTransaction().commit();
-	
+
 				} catch (Exception e) {
 					System.out.println("Error: Student could not be registered...");
-					dispose();
-				} 
-					dispose();
-					System.out.printf("Success: %s is now registered for %s%n", student.getsName(),course.getcName());
-					
+				}
+				System.out.printf("Success: %s is now registered for %s%n", student.getsName(), course.getcName());
 			} else {
-				dispose();
-				System.out.printf("Error: %s already registered for %s%n", student.getsName(),course.getcName());
+				System.out.printf("Error: %s already registered for %s%n", student.getsName(), course.getcName());
 			}
 		} else {
-			dispose();
 			System.out.println("Error: Email or Course ID not found...");
 		}
-
+		dispose();
 	}
-
+	// 
 	@Override
 	public List<Course> getStudentCourses(String sEmail) {
+
 		Student student = getStudentByEmail(sEmail);
+
 		System.out.printf("List of courses for %s:%n", student.getsName());
+
 		return student.getsCourses();
 	}
 
