@@ -32,7 +32,7 @@ public class User {
 	@OneToMany(
 			targetEntity = Whiskey.class,
 			cascade = CascadeType.REMOVE,
-			fetch = FetchType.EAGER
+			fetch = FetchType.LAZY
 	)
 	@JoinTable(name = "wantedWhiskey")
 	private List<Whiskey> wantedWhiskey;
@@ -42,6 +42,13 @@ public class User {
 		super();
 	}
 
+	public User(String username, String firstName, String lastName, String password) {
+		super();
+		this.username = username;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.password = password;
+	}
 
 	public User(String username, String firstName, String lastName, String password, List<Whiskey> savedWhiskey,
 			List<Whiskey> wantedWhiskey) {
