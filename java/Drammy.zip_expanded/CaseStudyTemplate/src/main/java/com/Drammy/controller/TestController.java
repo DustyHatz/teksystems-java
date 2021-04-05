@@ -1,5 +1,7 @@
 package com.Drammy.controller;
 
+import java.util.Optional;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,14 +36,23 @@ public class TestController {
 	
 	@PostMapping("/signInAttempt")
 	public ModelAndView signInAttempt(HttpServletRequest request) {
-		String username = request.getParameter(username);
-		String password = request.getParameter(password);
+		String inputUsername = request.getParameter("username");
+		String inputPassword = request.getParameter("password");
+		ModelAndView mav = new ModelAndView();
 		
-		if (username.equals() {
+		User user = userService.getUserByUsername(inputUsername);
+//		System.out.println("User: " + user.getUsername() + " " + user.getPassword());
+//		System.out.println(inputUsername + " " + inputPassword);
+		
+		if (user != null && user.getUsername().equals(inputUsername) && user.getPassword().equals(inputPassword)) {
+			mav.setViewName("userProfile");
+			mav.addObject(user);
+			return mav;
 			
+		} else {
+			mav.setViewName("signIn");
+			return mav;
 		}
-		
-		ModelAndView mav = new ModelAndView("userProfile");
 	}
 	
 	@PostMapping("/createAccount")

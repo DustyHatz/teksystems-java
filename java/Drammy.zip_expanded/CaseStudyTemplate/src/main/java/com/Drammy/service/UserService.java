@@ -23,13 +23,13 @@ public class UserService {
 		return addedUser;
 	}
 	
-	public User getUserByusername(String username) {
+	public User getUserByUsername(String username) {
 		
 		Optional<User> user = userRepository.findById(username);
 		
 		return user.orElse(null);
 	}
-	
+		
 	/*
 	public void changePassword(String username) {
 		

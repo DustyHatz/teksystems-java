@@ -24,6 +24,32 @@
 	
 	<!-- Custom styles for this template -->
 	<style><%@include file="/resources/css/style.css"%></style>
+	
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+	<script>
+		// JavaScript for disabling form submissions if there are invalid fields
+		(function() {
+			'use strict';
+			window.addEventListener('load', function() {
+				// Fetch all the forms we want to apply custom Bootstrap validation styles to
+				var forms = document.getElementsByClassName('needs-validation');
+				// Loop over them and prevent submission
+				var validation = Array.prototype.filter.call(forms, function(form) {
+					form.addEventListener('submit', function(event) {
+						if (form.checkValidity() === false) {
+							event.preventDefault();
+							event.stopPropagation();
+						}
+						form.classList.add('was-validated');
+					}, false);
+				});
+			}, false);
+		})();
+	</script>
 
 </head>
 
@@ -47,20 +73,24 @@
           <h1 class="mb-5">Sign in...</h1>
         </div>
         <div class="col-md-10 col-lg-8 col-xl-7 mx-left">
-          <form action="signIn">
+          <form class="needs-validation" action="/Drammy/signInAttempt" method="POST" novalidate>
             <div class="form-group">
               <label for="userName">Username</label>
-              <input type="text" class="form-control" id="userName" placeholder="Enter username...">
+              <input type="text" class="form-control" name="username" id="userName" placeholder="Enter username..." required>
+              <div class="invalid-feedback">Please enter a Username
+							</div>
             </div>
             <div class="form-group">
               <label for="password">Password</label>
-              <input type="password" class="form-control" id="password" placeholder="Enter password...">
+              <input type="password" class="form-control" name="password" id="password" placeholder="Enter password..." required>
+              <div class="invalid-feedback">Please enter a Password
+							</div>
             </div>
             <button type="submit" class="btn text-white submit-btn">Submit</button>
           </form>
           <hr class="btn-light">
           <p>Don't have an account?</p>
-          <a href="register.html"><button class="btn btn-dark custom-btn">Create Account</button></a>
+          <a href="/Drammy/createAccount"><button class="btn btn-dark custom-btn">Create Account</button></a>
         </div>
       </div>
     </div>

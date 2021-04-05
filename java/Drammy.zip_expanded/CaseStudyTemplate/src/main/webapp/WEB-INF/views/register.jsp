@@ -59,8 +59,8 @@
 	<!-- Navigation -->
 	<nav class="navbar navbar-light bg-light static-top">
 		<div class="container">
-			<a class="navbar-brand" href="index.html">Drammy</a> <a
-				class="btn btn-dark custom-btn" href="sign_in.html">Sign In</a>
+			<a class="navbar-brand" href="/Drammy">Drammy</a> <a
+				class="btn btn-dark custom-btn" href="/Drammy/signIn">Sign In</a>
 		</div>
 
 	</nav>
