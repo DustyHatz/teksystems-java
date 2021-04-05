@@ -17,52 +17,50 @@ public class UserService {
 	UserRepository userRepository;
 
 		
-	public void addUser(User user) {
+	public User addUser(User user) {
 		
-		if (user != null) {
-			
-			userRepository.save(user);
-		}
+		User addedUser =  userRepository.save(user);
+		return addedUser;
 	}
 	
-//	public User getUserByusername(String username) {
-//		
-//		Optional<User> user = userRepository.findById(username);
-//		
-//		return user.orElse(null);
-//	}
-//	
-//	/*
-//	public void changePassword(String username) {
-//		
-//	}
-//	*/
-//	
-//	public void deleteUserByUsername(String username) {
-//		userRepository.deleteByUsername(username);
-//	}
-//	
-//	/* public List<User> allUsers() {
-//		List<User> allUsers = userRepository.findAll();
-//		
-//		if (!allUsers.isEmpty()) {
-//			return allUsers;
-//		} else {
-//			System.out.println("No users found...");
-//			return null;
-//		}
-//	}
-//	*/
-//	
-//	public List<Whiskey> savedWhiskey(String username) {
-//		// TODO
-//		return null;
-//	}
-//	
-//	public List<Whiskey> wantedWhiskey(String username) {
+	public User getUserByusername(String username) {
+		
+		Optional<User> user = userRepository.findById(username);
+		
+		return user.orElse(null);
+	}
+	
+	/*
+	public void changePassword(String username) {
+		
+	}
+	*/
+	
+	public void deleteUserByUsername(String username) {
+		userRepository.deleteByUsername(username);
+	}
+	
+	/* public List<User> allUsers() {
+		List<User> allUsers = userRepository.findAll();
+		
+		if (!allUsers.isEmpty()) {
+			return allUsers;
+		} else {
+			System.out.println("No users found...");
+			return null;
+		}
+	}
+	*/
+	
+	public List<Whiskey> savedWhiskey(String username) {
 		// TODO
-//		return null;
-//	}
+		return null;
+	}
+	
+	public List<Whiskey> wantedWhiskey(String username) {
+		// TODO
+		return null;
+	}
 	
 	
 }

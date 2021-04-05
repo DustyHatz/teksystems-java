@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,9 +37,9 @@
 	<nav class="navbar navbar-light bg-dark static-top">
 	
 		<div class="container">
-			<a class="navbar-brand text-light" href="index.html">Drammy</a>
-			<a class="btn text-white custom-btn" href="/signIn">Sign In</a> 
-			<a class="btn text-white custom-btn" href="/register">Create Account</a>
+			<a class="navbar-brand text-light" href="/Drammy">Drammy</a>
+			<a class="btn text-white custom-btn" href="/Drammy/signIn">Sign In</a> 
+			<a class="btn text-white custom-btn" href="/Drammy/register">Create Account</a>
 		</div>
 
 	</nav>
@@ -50,7 +50,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-xl-9 mx-auto">
-					<h1 class="mb-5">DRAMMY</h1>
+					<h1 class="mb-5">Welcome ${user.getFirstName()}</h1>
 				</div>
 				<div class="col-md-10 col-lg-8 col-xl-7 mx-left">
 					<form>

@@ -11,11 +11,11 @@ import com.Drammy.models.Whiskey;
 @Repository
 public interface UserRepository extends JpaRepository<User, String> {
 	
-	void addUser(User user);
+//	void addUser(User user);
 //	
 //	User getUserByUsername(String username);
 //	
-//	void deleteByUsername(String username);
+	void deleteByUsername(String username);
 //	
 //	//void changePassword(String username);
 //	

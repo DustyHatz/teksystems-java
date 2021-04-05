@@ -74,22 +74,22 @@
 					<h1 class="mb-5">Create account...</h1>
 				</div>
 				<div class="col-md-10 col-lg-8 col-xl-7 mx-left">
-					<form class="needs-validation" novalidate
+					<form class="needs-validation" action="/Drammy/createAccount" method="POST" novalidate
 						oninput='confirmPassword.setCustomValidity(confirmPassword.value != password.value ? "Passwords do not match." : "")'>
 						<div class="form-group">
 							<div class="form-row">
 								<div class="form-group col-md-6">
 									<label for="firstName">First Name</label> <input type="text"
-										class="form-control" id="firstName"
+										class="form-control" name="firstName" id="firstName"
 										placeholder="First Name...">
 								</div>
 								<div class="form-group col-md-6">
 									<label for="lastName">Last Name</label> <input type="text"
-										class="form-control" id="lastName" placeholder="Last Name...">
+										class="form-control" name="lastName" id="lastName" placeholder="Last Name...">
 								</div>
 							</div>
 							<label for="userName">Username</label> <input type="text"
-								class="form-control" id="userName"
+								class="form-control" name="username" id="userName"
 								placeholder="Create username..." required maxlength="20">
 							<div class="invalid-feedback">Please enter a valid Username
 							</div>
@@ -99,14 +99,14 @@
 						<div class="form-row">
 							<div class="form-group col-md-6">
 								<label for="password">Create Password</label> <input
-									type="password" class="form-control" id="password"
+									type="password" class="form-control" name="password" id="password"
 									placeholder="Create password..." required>
 								<div class="invalid-feedback">Please enter a valid
 									password</div>
 							</div>
 							<div class="form-group col-md-6">
 								<label for="confirmPassword">Confirm Password</label> <input
-									type="password" class="form-control" id="confirmPassword"
+									type="password" class="form-control" name="confirmPassword" id="confirmPassword"
 									placeholder="Re-type password..." required>
 								<div class="invalid-feedback">Passwords do not match</div>
 							</div>

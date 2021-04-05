@@ -8,16 +8,16 @@ import com.Drammy.service.WhiskeyService;
 
 public class TestRunner {
 
-	@Autowired
-	UserRepository userRepository;
+//	@Autowired
+//	UserRepository userRepository;
 	
 	public static void main(String[] args) {
 		
 		
-		User dustin = new User("dustyhatz", "Dustin", "Hatzenbuhler", "1234");
-		
-		 userRepository.
-		
+//		User dustin = new User("dustyhatz", "Dustin", "Hatzenbuhler", "1234");
+//		
+//		 userRepository.
+//		
 	}
 
 }

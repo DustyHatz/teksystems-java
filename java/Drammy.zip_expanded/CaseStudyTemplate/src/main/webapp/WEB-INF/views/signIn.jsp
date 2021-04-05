@@ -32,8 +32,8 @@
   <!-- Navigation -->
   <nav class="navbar navbar-light bg-dark static-top">
     <div class="container">
-      <a class="navbar-brand text-light" href="index.html">Drammy</a>
-      <a class="btn btn-dark custom-btn" href="register.html">Create Account</a>
+      <a class="navbar-brand text-light" href="/Drammy">Drammy</a>
+      <a class="btn text-white custom-btn" href="/Drammy/register">Create Account</a>
     </div>
     
   </nav>
