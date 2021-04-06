@@ -45,7 +45,7 @@
 	</nav>
 
 	<!-- Masthead -->
-	<header class="masthead text-white text-left" style="background-image: url('<%=request.getContextPath()%>/resources/images/tasting_glass.jpeg');">
+	<header class="masthead text-white text-left masthead-image" style="background-image: url('<%=request.getContextPath()%>/resources/images/tasting_glass.jpeg');">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row">

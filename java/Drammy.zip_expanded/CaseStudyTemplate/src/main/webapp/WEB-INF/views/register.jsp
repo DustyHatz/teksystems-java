@@ -57,16 +57,18 @@
 <body>
 
 	<!-- Navigation -->
-	<nav class="navbar navbar-light bg-light static-top">
+	<nav class="navbar navbar-light bg-dark static-top">
+	
 		<div class="container">
-			<a class="navbar-brand" href="/Drammy">Drammy</a> <a
-				class="btn btn-dark custom-btn" href="/Drammy/signIn">Sign In</a>
+			<a class="navbar-brand text-light" href="/Drammy">Drammy</a>
+			<a class="btn text-white custom-btn" href="/Drammy/signIn">Sign In</a>
+			<!-- <a class="btn text-white custom-btn" href="/Drammy/register">Create Account</a> -->
 		</div>
 
 	</nav>
 
 	<!-- Masthead -->
-	<header class="masthead text-white text-left">
+	<header class="masthead text-white text-left masthead-image" style="background-image: url('<%=request.getContextPath()%>/resources/images/tasting_glass.jpeg');">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row">
@@ -128,88 +130,40 @@
 	</header>
 
 	<!-- Icons Grid -->
-	<section class="features-icons bg-light text-center">
-		<div class="container">
-			<span class="font-italic font custom-span">"The best whiskey
-				is the whiskey you like, the way you like to drink it!"</span>
-		</div>
-		<span class="font-italic font-weight-light custom-span">-
-			Whiskey Tribe</span>
-	</section>
+  <section class="features-icons bg-dark text-center">
+    <div class="container">
+      <span class="font-italic font custom-span">"The best whiskey is the whiskey you like, the way you like to drink it!"</span>
+    </div>
+    <span class="font-italic font-weight-light custom-span">- Whiskey Tribe</span>
+  </section>
 
 	<!-- Image Showcases -->
-	<section class="showcase">
-		<div class="container-fluid p-0">
-			<div class="row no-gutters">
+  <section class="showcase">
+    <div class="container-fluid p-0">
+      <div class="row no-gutters">
 
-				<div class="col-lg-6 order-lg-2 text-white showcase-img"
-					style="background-image: url('img/pot_still.jpeg');"></div>
-				<div class="col-lg-6 order-lg-1 my-auto showcase-text">
-					<h2>All Scotch is whiskey...</h2>
-					<p class="lead mb-0">...but not all whiskey is Scotch. Scotch
-						is but one variation of whiskey. Other styles of whiskey include,
-						Bourbon, Irish, Canadian, Japenese, and many more!</p>
-				</div>
-			</div>
-			<div class="row no-gutters">
-				<div class="col-lg-6 text-white showcase-img"
-					style="background-image: url('img/tasting_glasses.jpeg');"></div>
-				<div class="col-lg-6 my-auto showcase-text">
-					<h2>"Tasting" is different than "drinking"</h2>
-					<p class="lead mb-0">The goal is to evaluate and enjoy the
-						whiskey. Sip a little bit at a time, taking note of the aroma,
-						texture, and ultimately the flavor, just as you would when tasting
-						wine.</p>
-				</div>
-			</div>
-			<div class="row no-gutters">
-				<div class="col-lg-6 order-lg-2 text-white showcase-img"
-					style="background-image: url('img/enjoy_whiskey.jpeg');"></div>
-				<div class="col-lg-6 order-lg-1 my-auto showcase-text">
-					<h2>What is the best whiskey?</h2>
-					<p class="lead mb-0">Whether you enjoy a dram neat, on the
-						rocks, or mixed in a tasty cocktail, the best whiskey is the
-						whiskey you like the way you like to drink it.</p>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<!-- Testimonials -->
-	<section class="testimonials text-center bg-light">
-		<div class="container">
-			<h2 class="mb-5">What people are saying...</h2>
-			<div class="row">
-				<div class="col-lg-4">
-					<div class="testimonial-item mx-auto mb-5 mb-lg-0">
-						<img class="img-fluid rounded-circle mb-3"
-							src="img/testimonials-1.jpg" alt="">
-						<h5>Margaret E.</h5>
-						<p class="font-weight-light mb-0">"This is fantastic! Thanks
-							so much guys!"</p>
-					</div>
-				</div>
-				<div class="col-lg-4">
-					<div class="testimonial-item mx-auto mb-5 mb-lg-0">
-						<img class="img-fluid rounded-circle mb-3"
-							src="img/testimonials-2.jpg" alt="">
-						<h5>Fred S.</h5>
-						<p class="font-weight-light mb-0">"Bootstrap is amazing. I've
-							been using it to create lots of super nice landing pages."</p>
-					</div>
-				</div>
-				<div class="col-lg-4">
-					<div class="testimonial-item mx-auto mb-5 mb-lg-0">
-						<img class="img-fluid rounded-circle mb-3"
-							src="img/testimonials-3.jpg" alt="">
-						<h5>Sarah W.</h5>
-						<p class="font-weight-light mb-0">"Thanks so much for making
-							these free resources available to us!"</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+        <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('<%=request.getContextPath()%>/resources/images/pot_still.jpeg');"></div>
+        <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+          <h2>All Scotch is whiskey...</h2>
+          <p class="lead mb-0">...but not all whiskey is Scotch. Scotch is but one variation of whiskey. Other styles of whiskey include, Bourbon, Irish, Canadian, Japenese, and many more!</p>
+        </div>
+      </div>
+      <div class="row no-gutters">
+        <div class="col-lg-6 text-white showcase-img" style="background-image: url('<%=request.getContextPath()%>/resources/images/tasting_glasses.jpeg');"></div>
+        <div class="col-lg-6 my-auto showcase-text">
+          <h2>"Tasting" is different than "drinking"</h2>
+          <p class="lead mb-0">The goal is to evaluate and enjoy the whiskey. Sip a little bit at a time, taking note of the aroma, texture, and ultimately the flavor, just as you would when tasting wine.</p>
+        </div>
+      </div>
+      <div class="row no-gutters">
+        <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('<%=request.getContextPath()%>/resources/images/enjoy_whiskey.jpeg');"></div>
+        <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+          <h2>What is the best whiskey?</h2>
+          <p class="lead mb-0">Whether you enjoy a dram neat, on the rocks, or mixed in a tasty cocktail, the best whiskey is the whiskey you like the way you like to drink it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
 	<!-- Footer -->
 	<footer>

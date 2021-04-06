@@ -39,14 +39,14 @@
 	
 		<div class="container">
 			<a class="navbar-brand text-light" href="/Drammy">Drammy</a>
-			<a class="btn text-white custom-btn" href="/Drammy/signIn">Sign In</a> 
-			<a class="btn text-white custom-btn" href="/Drammy/register">Create Account</a>
+			<a class="btn text-white custom-btn" href="/Drammy/signIn">Sign In</a>
+			<!-- <a class="btn text-white custom-btn" href="/Drammy/register">Create Account</a> -->
 		</div>
 
 	</nav>
 
 	<!-- Masthead -->
-	<header class="masthead text-white text-left" style="background-image: url('<%=request.getContextPath()%>/resources/images/tasting_glass.jpeg');">
+	<header class="masthead text-white text-left masthead-image" style="background-image: url('<%=request.getContextPath()%>/resources/images/tasting_glass.jpeg');">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row">
@@ -54,10 +54,10 @@
 					<h1 class="mb-5">DRAMMY</h1>
 				</div>
 				<div class="col-md-10 col-lg-8 col-xl-7 mx-left">
-					<form>
+					<form action="/Drammy/search" method="POST">
 						<div class="form-row">
 							<div class="col-12 col-md-6 mb-2 mb-md-0">
-								<input type="text" class="form-control form-control-lg"
+								<input type="text" class="form-control form-control-lg" name="search"
 									placeholder="Search for whiskey...">
 							</div>
 							<div class="col-12 col-md-3">
@@ -71,12 +71,20 @@
 		</div>
 	</header>
 	
+	<!-- Icons Grid -->
+	<section class="features-icons bg-dark text-center"
+		style="background-image: url();">
+		<div class="container">
+			<span class="font-italic font custom-span">Search found ${results.size()} results...</span>
+		</div>
+	</section>
+	
 	<!-- Search Results -->
 	<div class="album py-5 bg-white">
     <div class="container">
     	
 	      <div class="row">
-	      	<c:if test="${results.size() > 1}">
+	      	<%-- <c:if test="${results.size() > 1}"> --%>
 					<c:forEach items="${results}" var="result">
 		        <div class="col-md-4">
 		          <div class="card mb-3 box-shadow bg-light">
@@ -86,8 +94,11 @@
 		              <p class="card-text">${result.distillery}</p>
 		              <div class="d-flex justify-content-between align-items-center">
 		                <div class="btn-group">
-		                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-		                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+		                	<form action="/Drammy/saveWhiskey" method="POST">
+		                		<input type="hidden" name="whiskeyId" value="${result.whiskeyId}">
+		                  	<button type="submit" class="btn btn-sm btn-outline-secondary">Tasted</button>
+		                  	<button type="submit" class="btn btn-sm btn-outline-secondary" formaction="/Drammy/wantWhiskey">Want</button>
+		                  </form>
 		                </div>
 		                <small class="text-muted">${result.type}</small>
 		              </div>
@@ -95,31 +106,16 @@
 		          </div>
 		        </div>
 		      </c:forEach>
-	     		</c:if>
+	     		<%-- </c:if> --%>
 	      </div>
 	     
     </div>
   </div>
 
-	<!-- Icons Grid -->
-	<section class="features-icons bg-dark text-center"
-		style="background-image: url();">
-		<div class="container">
-			<span class="font-italic font custom-span">"The best whiskey
-				is the whiskey you like, the way you like to drink it!"</span>
-		</div>
-		<span class="font-italic font-weight-light custom-span">-
-			Whiskey Tribe</span>
-	</section>
-
 	<!-- Footer -->
 	<footer>
 		<jsp:include page="footer.jsp"/>
 	</footer>
-
-	<!-- Bootstrap core JavaScript -->
-	<script src="vendor/jquery/jquery.min.js"></script>
-	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 </body>
 

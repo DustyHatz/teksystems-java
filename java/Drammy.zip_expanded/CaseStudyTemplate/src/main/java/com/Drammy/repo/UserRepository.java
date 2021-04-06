@@ -21,8 +21,12 @@ public interface UserRepository extends JpaRepository<User, String> {
 //	
 //	//List<User> allUsers();
 //	
-//	List<Whiskey> savedWhiskey(String username);
+//	List<Whiskey> saveWhiskey(int whiskeyId);
 //	
-//	List<Whiskey> wantedWhiskey(String username);
+//	List<Whiskey> wantedWhiskey(int whiskeyId);
+//	
+//	List<Whiskey> showSavedWhiskey(String username);
+	
+	//void updateSavedWhiskey(String username, Whiskey whiskey);
 	
 }

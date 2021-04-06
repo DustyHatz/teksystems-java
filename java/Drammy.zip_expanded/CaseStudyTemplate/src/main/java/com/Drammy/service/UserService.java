@@ -18,7 +18,6 @@ public class UserService {
 
 		
 	public User addUser(User user) {
-		
 		User addedUser =  userRepository.save(user);
 		return addedUser;
 	}
@@ -30,37 +29,41 @@ public class UserService {
 		return user.orElse(null);
 	}
 		
-	/*
-	public void changePassword(String username) {
-		
-	}
-	*/
-	
 	public void deleteUserByUsername(String username) {
 		userRepository.deleteByUsername(username);
 	}
 	
-	/* public List<User> allUsers() {
-		List<User> allUsers = userRepository.findAll();
+	public void updateSavedWhiskey(String username, Whiskey whiskey) {
 		
-		if (!allUsers.isEmpty()) {
-			return allUsers;
-		} else {
-			System.out.println("No users found...");
-			return null;
-		}
-	}
-	*/
-	
-	public List<Whiskey> savedWhiskey(String username) {
-		// TODO
-		return null;
+		User user = userRepository.getOne(username);
+		
+		List<Whiskey> currentSavedWhiskey = user.getSavedWhiskey();
+		currentSavedWhiskey.add(whiskey);
+		user.setSavedWhiskey(currentSavedWhiskey);
+		
+		userRepository.save(user);
+		
+		
 	}
 	
-	public List<Whiskey> wantedWhiskey(String username) {
-		// TODO
-		return null;
-	}
+//	public List<Whiskey> addTastedWhiskey(int whiskeyId) {
+//		// TODO
+//		return null;
+//	}
+//	
+//	public List<Whiskey> addWantedWhiskey(int whiskeyId) {
+//		// TODO
+//		return null;
+//	}
+//	
+//	public List<Whiskey> showSavedWhiskey(String username) {
+//		
+//		User user = userRepository.getOne(username);
+//		
+//		return user.getSavedWhiskey();
+//		
+//	}
+	
 	
 	
 }

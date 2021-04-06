@@ -38,14 +38,13 @@
 	
 		<div class="container">
 			<a class="navbar-brand text-light" href="/Drammy">Drammy</a>
-			<a class="btn text-white custom-btn" href="/Drammy/signIn">Sign In</a> 
-			<a class="btn text-white custom-btn" href="/Drammy/register">Create Account</a>
+			<a class="btn text-white custom-btn" href="/Drammy/logOut">Log Out</a> 
 		</div>
 
 	</nav>
 
 	<!-- Masthead -->
-	<header class="masthead text-white text-left" style="background-image: url('<%=request.getContextPath()%>/resources/images/tasting_glass.jpeg');">
+	<header class="masthead text-white text-left masthead-image" style="background-image: url('<%=request.getContextPath()%>/resources/images/tasting_glass.jpeg');">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row">
@@ -53,10 +52,10 @@
 					<h1 class="mb-5">Welcome ${user.getFirstName()}</h1>
 				</div>
 				<div class="col-md-10 col-lg-8 col-xl-7 mx-left">
-					<form>
+					<form action="search" method="POST">
 						<div class="form-row">
 							<div class="col-12 col-md-6 mb-2 mb-md-0">
-								<input type="text" class="form-control form-control-lg"
+								<input type="text" class="form-control form-control-lg" name="search"
 									placeholder="Search for whiskey...">
 							</div>
 							<div class="col-12 col-md-3">
