@@ -1,5 +1,6 @@
 package com.Drammy.controller;
 
+import java.util.List;
 import java.util.Optional;
 
 import javax.servlet.http.HttpServletRequest;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.Drammy.models.User;
+import com.Drammy.models.Whiskey;
 import com.Drammy.repo.UserRepository;
 import com.Drammy.service.UserService;
 import com.Drammy.service.WhiskeyService;
@@ -21,6 +23,7 @@ public class TestController {
 	
 	@Autowired
 	UserService userService;
+	@Autowired
 	WhiskeyService whiskeyService;
 	
 	@RequestMapping("/")
@@ -69,11 +72,23 @@ public class TestController {
 		return mav;
 	}
 	
-	
-	
 	@RequestMapping("/register")
 	public ModelAndView register() {
 		ModelAndView mav = new ModelAndView("register");
+		return mav;
+	}
+
+	@PostMapping("/search")
+	public ModelAndView searchHandler(HttpServletRequest request) {
+		ModelAndView mav = new ModelAndView("whiskeyResults");
+		
+		String searchTerm = request.getParameter("search");
+		System.out.println(searchTerm);
+		List<Whiskey> results = whiskeyService.searchWhiskeyName(searchTerm);
+		
+		for(Whiskey result: results) {
+			System.out.println(result.getName());
+		}
 		return mav;
 	}
 }

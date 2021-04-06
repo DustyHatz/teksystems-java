@@ -53,10 +53,10 @@
 					<h1 class="mb-5">DRAMMY</h1>
 				</div>
 				<div class="col-md-10 col-lg-8 col-xl-7 mx-left">
-					<form>
+					<form action="/Drammy/search" method="POST">
 						<div class="form-row">
 							<div class="col-12 col-md-6 mb-2 mb-md-0">
-								<input type="text" class="form-control form-control-lg"
+								<input type="text" class="form-control form-control-lg" name="search"
 									placeholder="Search for whiskey...">
 							</div>
 							<div class="col-12 col-md-3">

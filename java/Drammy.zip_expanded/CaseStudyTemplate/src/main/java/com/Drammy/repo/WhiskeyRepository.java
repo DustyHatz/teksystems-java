@@ -10,13 +10,15 @@ import com.Drammy.models.Whiskey;
 
 @Repository
 public interface WhiskeyRepository extends JpaRepository<Whiskey, Integer> {
+
+	//List<Whiskey> orderByType(String type);
 	
-	Whiskey getWhiskeyByName(String name);
+	List<Whiskey> findByNameContaining(String name);
 	
-	Whiskey getWhiskeyByDistillery(String distillery);
-	
-	List<Whiskey> getAllWhiskeyByDistillery(String distillery);
-	
-	List<Whiskey> getAllWhiskeyByType(String type);
+//	Whiskey getWhiskeyByName(String name);
+//	
+//	Whiskey getWhiskeyByDistillery(String distillery);
+//	
+	//List<Whiskey> orderByDistillery(String distillery);
 	
 }
