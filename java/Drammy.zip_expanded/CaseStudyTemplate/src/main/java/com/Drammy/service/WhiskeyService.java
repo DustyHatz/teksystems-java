@@ -36,7 +36,5 @@ public class WhiskeyService {
 		return whiskies;
 	}
 	
-
-
 	
 }

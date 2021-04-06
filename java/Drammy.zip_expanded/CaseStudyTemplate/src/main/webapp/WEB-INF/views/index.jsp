@@ -38,8 +38,8 @@
 	
 		<div class="container">
 			<a class="navbar-brand text-light" href="/Drammy">Drammy</a>
-			<a class="btn text-white custom-btn" href="/Drammy/signIn">Sign In</a> 
-			<a class="btn text-white custom-btn" href="/Drammy/register">Create Account</a>
+			<a class="btn text-white custom-btn" href="/Drammy/signIn">Sign In</a>
+			<!-- <a class="btn text-white custom-btn" href="/Drammy/register">Create Account</a> -->
 		</div>
 
 	</nav>
@@ -97,7 +97,7 @@
 			</div>
 			<div class="row no-gutters">
 				<div class="col-lg-6 text-white showcase-img"
-					style="background-image: url('img/tasting_glasses.jpeg');"></div>
+					style="background-image: url('<%=request.getContextPath()%>/resources/images/tasting_glasses.jpeg');"></div>
 				<div class="col-lg-6 my-auto showcase-text">
 					<h2>"Tasting" is different than "drinking"</h2>
 					<p class="lead mb-0">The goal is to evaluate and enjoy the
@@ -108,7 +108,7 @@
 			</div>
 			<div class="row no-gutters">
 				<div class="col-lg-6 order-lg-2 text-white showcase-img"
-					style="background-image: url('img/enjoy_whiskey.jpeg');"></div>
+					style="background-image: url('<%=request.getContextPath()%>/resources/images/enjoy_whiskey.jpeg');"></div>
 				<div class="col-lg-6 order-lg-1 my-auto showcase-text">
 					<h2>What is the best whiskey?</h2>
 					<p class="lead mb-0">Whether you enjoy a dram neat, on the
@@ -150,7 +150,7 @@
   </section> -->
 
 	<!-- Call to Action -->
-	<section class="call-to-action text-white text-center">
+	<!-- <section class="call-to-action text-white text-center">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row">
@@ -174,40 +174,11 @@
 				</div>
 			</div>
 		</div>
-	</section>
+	</section> -->
 
 	<!-- Footer -->
-	<footer class="footer bg-dark">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-6 h-100 text-center text-lg-left my-auto">
-					<ul class="list-inline mb-2">
-						<li class="list-inline-item"><a href="#">About</a></li>
-						<li class="list-inline-item">&sdot;</li>
-						<li class="list-inline-item"><a href="#">Contact</a></li>
-						<li class="list-inline-item">&sdot;</li>
-						<li class="list-inline-item"><a href="#">Terms of Use</a></li>
-						<li class="list-inline-item">&sdot;</li>
-						<li class="list-inline-item"><a href="#">Privacy Policy</a></li>
-					</ul>
-					<p class="text-muted small mb-4 mb-lg-0">&copy; Dustin
-						Hatzenbuhler - 2021</p>
-				</div>
-				<div class="col-lg-6 h-100 text-center text-lg-right my-auto">
-					<ul class="list-inline mb-0">
-						<li class="list-inline-item mr-3"><a href="#"> <i
-								class="fab fa-facebook fa-2x fa-fw"></i>
-						</a></li>
-						<li class="list-inline-item mr-3"><a href="#"> <i
-								class="fab fa-twitter-square fa-2x fa-fw"></i>
-						</a></li>
-						<li class="list-inline-item"><a href="#"> <i
-								class="fab fa-instagram fa-2x fa-fw"></i>
-						</a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
+	<footer>
+		<jsp:include page="footer.jsp"/>
 	</footer>
 
 	<!-- Bootstrap core JavaScript -->
