@@ -22,6 +22,14 @@ a {
   color: goldenrod;
 }
 
+.search-result {
+	display: block;
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+	object-fit: fill;
+}
+
 header.masthead {
   position: relative;
   background-color: #343a40;

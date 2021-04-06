@@ -86,9 +86,7 @@ public class TestController {
 		System.out.println(searchTerm);
 		List<Whiskey> results = whiskeyService.searchWhiskeyName(searchTerm);
 		
-		for(Whiskey result: results) {
-			System.out.println(result.getName());
-		}
+		mav.addObject("results", results);
 		return mav;
 	}
 }
