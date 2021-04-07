@@ -43,27 +43,19 @@ public class UserService {
 		
 		userRepository.save(user);
 		
-		
 	}
 	
-//	public List<Whiskey> addTastedWhiskey(int whiskeyId) {
-//		// TODO
-//		return null;
-//	}
-//	
-//	public List<Whiskey> addWantedWhiskey(int whiskeyId) {
-//		// TODO
-//		return null;
-//	}
-//	
-//	public List<Whiskey> showSavedWhiskey(String username) {
-//		
-//		User user = userRepository.getOne(username);
-//		
-//		return user.getSavedWhiskey();
-//		
-//	}
-	
+	public void updateWantedWhiskey(String username, Whiskey whiskey) {
+		
+		User user = userRepository.getOne(username);
+		
+		List<Whiskey> currentWantedWhiskey = user.getWantedWhiskey();
+		currentWantedWhiskey.add(whiskey);
+		user.setSavedWhiskey(currentWantedWhiskey);
+		
+		userRepository.save(user);
+		
+	}
 	
 	
 }

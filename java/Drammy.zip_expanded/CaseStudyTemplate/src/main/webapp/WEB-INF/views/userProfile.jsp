@@ -27,6 +27,9 @@
 	
 	<!-- Custom styles for this template -->
 	<style><%@include file="/resources/css/style.css"%></style>
+	
+		<!-- Add jstl for using c:forEach tag -->
+	<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 
 </head>
@@ -49,7 +52,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-xl-9 mx-auto">
-					<h1 class="mb-5">Welcome ${user.getFirstName()}</h1>
+					<h1 class="mb-5">${user.getFirstName()}'s Drams</h1>
 				</div>
 				<div class="col-md-10 col-lg-8 col-xl-7 mx-left">
 					<form action="search" method="POST">
@@ -69,54 +72,51 @@
 		</div>
 	</header>
 
-	<!-- Icons Grid -->
-	<section class="features-icons bg-dark text-center"
-		style="background-image: url();">
-		<div class="container">
-			<span class="font-italic font custom-span">"The best whiskey
-				is the whiskey you like, the way you like to drink it!"</span>
-		</div>
-		<span class="font-italic font-weight-light custom-span">-
-			Whiskey Tribe</span>
-	</section>
-
-	<!-- Image Showcases -->
-	<section class="showcase">
-		<div class="container-fluid p-0">
-			<div class="row no-gutters">
-
-				<div class="col-lg-6 order-lg-2 text-white showcase-img"
-					style="background-image: url('<%=request.getContextPath()%>/resources/images/pot_still.jpeg');"></div>
-				<div class="col-lg-6 order-lg-1 my-auto showcase-text">
-					<h2>All Scotch is whiskey...</h2>
-					<p class="lead mb-0">...but not all whiskey is Scotch. Scotch
-						is but one variation of whiskey. Other styles of whiskey include,
-						Bourbon, Irish, Canadian, Japenese, and many more!</p>
-				</div>
-			</div>
-			<div class="row no-gutters">
-				<div class="col-lg-6 text-white showcase-img"
-					style="background-image: url('img/tasting_glasses.jpeg');"></div>
-				<div class="col-lg-6 my-auto showcase-text">
-					<h2>"Tasting" is different than "drinking"</h2>
-					<p class="lead mb-0">The goal is to evaluate and enjoy the
-						whiskey. Sip a little bit at a time, taking note of the aroma,
-						texture, and ultimately the flavor, just as you would when tasting
-						wine.</p>
-				</div>
-			</div>
-			<div class="row no-gutters">
-				<div class="col-lg-6 order-lg-2 text-white showcase-img"
-					style="background-image: url('img/enjoy_whiskey.jpeg');"></div>
-				<div class="col-lg-6 order-lg-1 my-auto showcase-text">
-					<h2>What is the best whiskey?</h2>
-					<p class="lead mb-0">Whether you enjoy a dram neat, on the
-						rocks, or mixed in a tasty cocktail, the best whiskey is the
-						whiskey you like the way you like to drink it.</p>
-				</div>
-			</div>
-		</div>
-	</section>
+<!-- User Whiskey Tables -->
+  <div class="row">
+    <div class="column">
+      <h3>Tasted</h3>
+      <table class="table table-light table-hover table-md">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Whiskey</th>
+            <th scope="col">Distillery</th>
+            <th scope="col">Type</th>
+          </tr>
+        </thead>
+        <tbody>
+        	<c:forEach items="${savedWhiskey}" var="whiskey">
+	          <tr>
+	            <td>${whiskey.name}</td>
+	            <td>${whiskey.distillery}</td>
+	            <td>${whiskey.type}</td>
+	          </tr>
+        	</c:forEach>
+        </tbody>
+      </table>
+    </div>
+    <div class="column">
+      <h3>Want</h3>
+      <table class="table table-light table-hover table-md">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Whiskey</th>
+            <th scope="col">Distillery</th>
+            <th scope="col">Type</th>
+          </tr>
+        </thead>
+        <tbody>
+        	<c:forEach items="${wantedWhiskey}" var="whiskey">
+	          <tr>
+	            <td>${whiskey.name}</td>
+	            <td>${whiskey.distillery}</td>
+	            <td>${whiskey.type}</td>
+	          </tr>
+        	</c:forEach>
+        </tbody>
+      </table>
+    </div>
+  </div>
 
 	<!-- Footer -->
 	<footer>

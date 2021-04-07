@@ -130,6 +130,7 @@ public class TestController {
 		ModelAndView mav = new ModelAndView("userProfile");
 		mav.addObject(user);
 		mav.addObject("savedWhiskey", user.getSavedWhiskey());
+		mav.addObject("wantedWhiskey", user.getWantedWhiskey());
 		return mav;
 	}
 	

@@ -96,8 +96,13 @@ header.masthead h1 {
 }
 
 .features-icons {
-  padding-top: 7rem;
-  padding-bottom: 7rem;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.search-results {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 .custom-span {
@@ -157,3 +162,39 @@ footer.footer {
   padding-top: 4rem;
   padding-bottom: 4rem;
 }
+
+* {
+  box-sizing: border-box;
+}
+
+.row {
+  display: flex;
+  margin-left:-5px;
+  margin-right:-5px;
+}
+
+.column {
+  flex: 50%;
+  padding: 5px;
+}
+
+.column h3 {
+  text-align: center;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+th, td {
+  text-align: left;
+  padding: 16px;
+  width: 40%;
+}
+
+/* tr:nth-child(even) {
+  background-color: #f2f2f2;
+} */

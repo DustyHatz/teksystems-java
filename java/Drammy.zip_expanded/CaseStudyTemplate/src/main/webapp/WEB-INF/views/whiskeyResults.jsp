@@ -28,6 +28,7 @@
 	<!-- Custom styles for this template -->
 	<style><%@include file="/resources/css/style.css"%></style>
 
+	<!-- Add jstl for using c:forEach tag -->
 	<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 </head>
@@ -72,7 +73,7 @@
 	</header>
 	
 	<!-- Icons Grid -->
-	<section class="features-icons bg-dark text-center"
+	<section class="search-results bg-dark text-center"
 		style="background-image: url();">
 		<div class="container">
 			<span class="font-italic font custom-span">Search found ${results.size()} results...</span>
@@ -96,7 +97,7 @@
 		                <div class="btn-group">
 		                	<form action="/Drammy/saveWhiskey" method="POST">
 		                		<input type="hidden" name="whiskeyId" value="${result.whiskeyId}">
-		                  	<button type="submit" class="btn btn-sm btn-outline-secondary">Tasted</button>
+		                  	<button type="submit" class="btn btn-sm btn-outline-secondary">Save</button>
 		                  	<button type="submit" class="btn btn-sm btn-outline-secondary" formaction="/Drammy/wantWhiskey">Want</button>
 		                  </form>
 		                </div>
